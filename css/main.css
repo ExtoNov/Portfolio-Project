@@ -80,12 +80,14 @@ strong {font-weight: 700;}
 }
 #scroll-track .scroll-thumb {
     position: absolute;
-    top: 0px;
+    top: 0;
     left: -1px;
     width: 3px;
     height: 50px;
+    transform: translateY(-50%);
     background-color: var(--orange);
     display: block;
+    transition: 0.2s all;
 }
 
 #main-bg {

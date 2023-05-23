@@ -1,5 +1,4 @@
 let scrollThumb;
-let currentScroll = 0;
 let scrollHeight;
 //DOM이 완전히 로드되었을때
 window.addEventListener('DOMContentLoaded', function(){
@@ -8,21 +7,11 @@ window.addEventListener('DOMContentLoaded', function(){
 });
 //scroll event
 window.addEventListener('scroll', function(){
-    var s = window.scrollY,
-      d = this.document.scrollHeight,
-      c = window.scrollHeight;
-
-  var scrollPercent = (s / (d - c)) * 100;
-  
-  console.clear();
-  console.log(scrollPercent);
-    // currentScroll = window.scrollY;
-    // // console.log(currentScroll);
-    // console.log((currentScroll - scrollHeight));
-    // if(currentScroll==0) {
-    //     scrollThumb.style.top = '0';
-    // } else {
-    //     scrollThumb.style.top = `${scrollHeight / currentScroll}%`;
-    // }
+    let currentScrollY = window.scrollY;
+    let docHeight = document.body.offsetHeight;
+    let winHeight = window.innerHeight;
+    let scrollPercent = currentScrollY / (docHeight - winHeight);
+    let scrollPercentRounded = Math.round(scrollPercent * 100);
+    scrollThumb.style.top = `${scrollPercentRounded}%`;
 });
 
