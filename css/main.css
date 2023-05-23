@@ -1,0 +1,210 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+:root {
+    --title-large: 96px;
+    --title-normal: 64px;
+    --title-small: 48px;
+    --content-large: 32px;
+    --content-normal: 24px;
+    --mint: #4BC6B9;
+    --green: #B0DB43;
+    --pink: #CB769E;
+    --orange: #F75C03;
+    --white: #FFFFFF;
+    --bgColor: #444;
+}
+html, body {
+    font-family: 'Pretendard', sans-serif;
+    background-color: var(--bgColor);
+    letter-spacing: -0.05em;
+    color: var(--white);
+    font-size: var(--content-normal);
+    word-break: keep-all;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar { display: none; }
+a {
+    text-decoration: none;
+    color: inherit;
+}
+strong {font-weight: 700;}
+.wrap {
+    /* max-width: 1440px; */
+    /* width: 90%; */
+    width: 1440px;
+    margin: 0 auto;
+}
+.orange { color: var(--orange); }
+.mint { color: var(--mint); }
+.pink { color: var(--pink); }
+.green { color: var(--green); }
+.white { color: var(--white); }
+.title-lg {
+    font-size: var(--title-large);
+}
+.title{
+    font-size: var(--title-normal);
+}
+.title-sm {
+    font-size: var(--title-small);
+}
+.content-lg {
+    font-size: var(--content-large);
+}
+.light {
+    font-weight: 200;
+}
+.bold {
+    font-weight: 700;
+}
+.heading {
+    position: relative;
+    display: inline-block;
+    font-weight: 900;
+}
+.heading::before{
+    content: '';
+    width: 100vw;
+    height: 8px;
+    right: -30px;
+    bottom: -25px;
+    position: absolute;
+}
+#scroll-track {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    width: 1px;
+    height: calc(100% - 100px);
+    background-color: var(--white);
+    display: block;
+}
+#scroll-track .scroll-thumb {
+    position: absolute;
+    top: 0px;
+    left: -1px;
+    width: 3px;
+    height: 50px;
+    background-color: var(--orange);
+    display: block;
+}
+
+#main-bg {
+    background-image: url('../images/bg.svg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+#main-visual .wrap{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+#my-name {
+    font-size: var(--title-large);
+    color: var(--white);
+    letter-spacing: 0.5em;
+    font-weight: 900;
+    margin-right: -0.5em;
+    position: relative;
+}
+#my-name::before {
+    content: '';
+    display: block;
+    background-color: var(--white);
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -80px;
+}
+#my-name::after{
+    content: '신상훈';
+    position: absolute;
+    top: 0.075em;
+    left: 0.075em;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.5px var(--white);
+    width: max-content;
+}
+#main-visual > .wrap > .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+#main-visual > .wrap > .content > .contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    gap: 10px;
+    width: min-content;
+}
+#introduce {
+    padding-top: 300px;
+    padding-bottom: 350px;
+}
+#introduce .heading::before {
+    background-color: var(--pink);
+}
+#introduce > .wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#introduce > .wrap > .content {
+    display: flex;
+    gap: 95px;
+    margin-top: 132px;
+    line-height: 1.5;
+}
+#introduce > .wrap > .content > .profile-img {
+    width: 400px;
+    aspect-ratio: 3 / 4;
+    background-image: url('../images/profile.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    outline: 1px solid var(--white);
+    box-sizing: border-box;
+}
+#introduce > .wrap > .content > div {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: repeat(7, auto);
+    row-gap: 30px;
+    align-items: flex-start;
+}
+#introduce > .wrap > .content > div > strong {
+    margin-right: 30px;
+}
+#introduce > .wrap > .content > div > p:last-child {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.marquee {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    height: 300px;
+    user-select: none;
+}
+.marquee .track {
+    position: absolute;
+    top: 50%;
+    width: 200%;
+    display: flex;
+    animation: marquee 5s infinite linear;
+}
+.marquee .track img {
+    width: 100vw;
+    /* height: 115px; */
+}
+@keyframes marquee {
+    0% {
+        transform: translate(0, -50%);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
