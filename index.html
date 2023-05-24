@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UI/UX Designer - 신상훈</title>
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/swiper-bundle.min.js"></script>
 </head>
 <body>
     <div id="scroll-track">
@@ -40,7 +42,7 @@
                         <strong>Email</strong><a href="mailto:otaku0722@gmail.com">otaku0722@gmail.com</a>
                         <strong>Kakao</strong><p>otaku0722</p>
                         <strong>Tools</strong><p>HTML, CSS, JS, jQuery, Figma, Photoshop, Illustrator</p>
-                        <p class="content-lg">“남들과 다른 시각에서 바라보는 소통하는 디자이너가 되겠습니다.”</p>
+                        <p class="content-lg bold">“남들과 다른 시각에서 바라보는 소통하는 디자이너가 되겠습니다.”</p>
                     </div>
                 </div>
             </div>
@@ -52,12 +54,167 @@
             </div>
         </div>
         <section id="web-design">
+            <div class="wrap">
+                <h1 class="title-lg heading"><span>Web Design</span></h1>
+                <div class="content">
+                    <h2 class="title">Bugs Redesign</h2>
+                    <div>
+                        <img src="./images/bugs-redesign.JPG" alt="bugs-redesign">
+                        <div>
+                            <div>
+                                <p>음악 스트리밍 서비스인 ‘벅스’의 홈페이지를 저만의 스타일로 다시 디자인하여
+                                    구성해본 홈페이지 입니다. 기존의 작은 그리드 시스템과 폰트의 단점을 없애고,
+                                    모바일부터 데스크탑까지 다양한 디바이스에서 한눈에 볼 수 있도록
+                                    큰 폰트와 3D 일러스트 이미지를 사용한 것이 특징입니다.</p>
+                                <p><strong>프로젝트 구현</strong><span>메인페이지, 반응형, Scroll Animation, Slide banner</span></p>
+                            </div>
+                            <div class="btn-wrap">
+                                <a href="http://ssh960722.dothome.co.kr/" target="_blank" class="btn-primary">웹페이지 살펴보기</a>
+                                <a  class="btn"><span>Style Guide</span></a>
+                                <a  class="btn"><span>Wireframe</span></a>
+                            </div>
+                        </div>
+                    </div>
 
+                    <h2 class="title">Selpix</h2>
+                    <div>
+                        <img src="./images/selpix.JPG" alt="selpix">
+                        <div>
+                            <div>
+                                <p>셀프 사진 스튜디오 ‘셀픽스’의 홈페이지를 기존의 리소스들을 이용하여 재구성해보았습니다. 기존의 부족한 여러 리소스들을 기반하여 포토샵과 일러스트레이터를 
+                                    이용하여 이미지들을 편집하였습니다.</p>
+                                <p><strong>프로젝트 구현</strong><span>메인페이지, 반응형, Scroll Animation, Slide banner</span></p>
+                            </div>
+                            <div class="btn-wrap">
+                                <a href="javascript:alert('준비중입니다.')" class="btn-primary">웹페이지 살펴보기</a>
+                                <a  class="btn"><span>Style Guide</span></a>
+                                <a  class="btn"><span>Wireframe</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="graphic-design">
+            <div class="wrap">
+                <h1 class="title-lg heading"><span>Graphic Design</span></h1>
+                <!-- Swiper -->
+                <div class="swiper slide-banner content">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./images/Vaporwave-Art---Crouch.jpg"/>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./images/ballet.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./images/extonov - glitch - square.png" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./images/abstact fluid color.png" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./images/planet.png"/>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./images/spring.png"/>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./images/layer blending.jpg"/>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+        <section id="mini-project">
+            <div class="wrap">
+                <h1 class="title-lg heading"><span>Mini Projects</span></h1>
+                <div class="content">
+                    <h2 class="title">Transition Effect</h2>
+                    <div>
+                        <img src="./images/transition-effect.png" alt="transition-effect">
+                        <div>
+                            <div>
+                                <p>중앙의 버튼을 누르게 되면, 타 페이지나 새로운 화면을 보여줄 때 전환효과를 실행합니다. 해당 효과는 사용자에게 불필요한 로딩 화면을 보여주지 않고, 몰입감을 증대시키는 효과를 줍니다.</p>
+                                <p><strong>사용 언어</strong><span>HTML, CSS, Vanilla JS</span></p>
+                            </div>
+                            <div class="btn-wrap">
+                                <a href="./project/transition/index.html" target="_blank" class="btn-primary">살펴보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="title">Loading Animation</h2>
+                    <div>
+                        <img src="./images/loading-animation.JPG" alt="loading-animation">
+                        <div>
+                            <div>
+                                <p>웹페이지에 영상, 이미지 리소스들이 많은 경우나 인터넷 회선이 느릴 경우, 사용자에게 배경이미지, 혹은 단순 색상 배경에 상대적으로 가벼운 SVG파일을 넣어 로고나 일러스트에 로딩효과를 줌으로써 단순 로딩애니메이션이 아닌 서비스와 연관 있는 이미지로 로딩 애니메이션을 구현할 수 있습니다.</p>
+                                <p><strong>사용 언어</strong><span>HTML, CSS, Vanilla JS</span></p>
+                            </div>
+                            <div class="btn-wrap">
+                                <a href="./project/loading-animation/index.html" target="_blank" class="btn-primary">살펴보기</a>
+                                <a  onclick="return false;" class="btn" id="caution"><span>주의사항</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="title">Clock</h2>
+                    <div>
+                        <img src="./images/clock.png" alt="clock">
+                        <div>
+                            <div>
+                                <p>Javascript의 Date객체를 이용하여, 현재 사용중인 브라우저의 시간을 불러와 아날로그 및 디지털 시계로 볼 수 있게 하였습니다.</p>
+                                <p><strong>사용 언어</strong><span>HTML, CSS, Vanilla JS</span></p>
+                            </div>
+                            <div class="btn-wrap">
+                                <a href="./project/clock/index.html" target="_blank" class="btn-primary">살펴보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="title">구매목록 생성기</h2>
+                    <div>
+                        <img src="./images/buy-list.png" alt="buy-list">
+                        <div>
+                            <div>
+                                <p>단순히 입력 창에 텍스트를 입력하면, 하단의 목록에 추가되는 방식의 간단한 프로젝트입니다. 윈도우 98시절의 느낌을 내기 위해 노력했습니다.
+                                    윈도우가 아닌 환경에서는 ‘돋움’폰트가 존재하지 않아 디자인이 완벽하지 않을 수 있습니다.</p>
+                                <p><strong>사용 언어</strong><span>HTML, CSS, Vanilla JS</span></p>
+                            </div>
+                            <div class="btn-wrap">
+                                <a href="./project/buy-list/index.html" target="_blank" class="btn-primary">살펴보기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="ending">
+            <div class="wrap">
+                <p class="title-lg">Thanks For Watching</p>
+                <h1 class="title-lg">감사합니다<br>
+                    남들과 다른 시각을 가진 디자이너<br>
+                    신상훈입니다</h1>
+            </div>
         </section>
     </div>
-
-
-
+    <footer>
+        <div class="wrap">
+            <div class="content">
+                <strong class="content-lg">Email</strong>
+                <span class="light content-lg"><a href="mailto:otaku0722@gmail.com">otaku0722@gmail.com</a></span>
+                <strong class="content-lg">Github</strong>
+                <span class="light content-lg"><a href="https://github.com/ExtoNov" target="_blank">https://github.com/ExtoNov</a></span>
+                <strong class="content-lg">Kakaotalk</strong>
+                <span class="light content-lg">otaku0722</span>
+                <strong class="content-lg">Discord</strong>
+                <span class="light content-lg">ExtoNov#3516</span>
+            </div>
+            <p class="light">This page is for Shin Sang Hoon’s Portfolio.</p>
+        </div>
+    </footer>
+    <a  onclick="return false;" class="scroll-top">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 407.436 407.436" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M315.869 21.178 294.621 0 91.566 203.718l203.055 203.718 21.248-21.178-181.945-182.54z" fill="#000000" data-original="#000000"></path></g></svg>
+    </a>
 <script src="./js/common.js"></script>
 </body>
 </html>

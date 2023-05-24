@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시계</title>
+    <style>
+        @font-face {
+            font-family: 'TmonMonsori';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+        body {
+            font-family: 'TmonMonsori', sans-serif;
+            background-color: #F4EEE0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .wrap {
+            max-width: 500px;
+            width: 90%;
+            min-width: fit-content;
+            text-align: center;
+            margin: 0 auto;
+            color: #6D5D6E;
+            font-size: 50px;
+            transition: 0.1s;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 50px;
+        }
+        h1{
+            font-size: 100px;
+            color: #393646;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .wrap > div:last-child {
+            color: #4F4557;
+            font-size: 90px;
+        }
+        #animation-btn {
+            text-decoration: none;;
+            color: #393646;
+            padding: 15px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 21px;
+        }
+        #animation-btn span {
+            color: #aa2222;
+        }
+        #animation-btn span.on {
+            color: #115522;
+        }
+        .clock {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100px;
+            width: 200px;
+            height: 200px;
+            border: 10px solid #393646;
+            margin-bottom: 30px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .clock .center {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: 50%;
+            top: 50%;
+            border-radius: 10px;
+            background-color: #F4EEE0;
+            border: 2px solid #393646;
+            box-sizing: border-box;
+            transform: translate(-50%, -50%);
+            z-index: 4;
+        }
+        .clock div:not(.center){
+            position: absolute;
+            top: 5px;
+            height: calc(50% - 5px);
+            transform-origin: 50% 100%;
+            /* transition: 0.1s all; */
+        }
+        .hour-hand {
+            width: 7px;
+            border-radius: 3.5px;
+            background-color: #393646;
+            z-index: 3;
+        }
+        .minute-hand {
+            width: 10px;
+            border-radius: 5px;
+            background-color: #6D5D6E;
+            transform: rotate(-30deg);
+            z-index: 2;
+        }
+        .second-hand {
+            width: 5px;
+            border-radius: 2.5px;
+            background-color: #115522;
+            transform: rotate(180deg);
+            z-index: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="clock">
+            <div class="center"></div>
+            <div class="hour-hand"></div>
+            <div class="minute-hand"></div>
+            <div class="second-hand"></div>
+        </div>
+        <h1><span>현</span><span>재</span><span>시</span><span>간</span></h1>
+        <div>
+            <span id="year"></span>년
+            <span id="month"></span>월
+            <span id="date"></span>일
+            <span id="day"></span>요일
+        </div>
+        <div>
+            <span id="hour"></span> :
+            <span id="minute"></span> :
+            <span id="second"></span>
+        </div>
+    </div>
+    <a href="#" id="animation-btn">애니메이션 <span>꺼짐</span></a>
+<script>
+    //container
+    let year = document.querySelector("#year");
+    let month = document.querySelector("#month");
+    let date = document.querySelector("#date");
+    let day = document.querySelector("#day");
+    let hour = document.querySelector("#hour");
+    let minute = document.querySelector("#minute");
+    let second = document.querySelector("#second");
+    const days = ['일', '월', '화', '수', '목', '금', '토'];
+    let isAnimate = false;
+    //갱신
+    let refresh = setInterval(function() {
+        if(isAnimate){
+            document.querySelector(".wrap").style.transform = "scale(1.1)";
+            let animation = setTimeout(function(){
+                document.querySelector(".wrap").style.transform = "scale(1)";
+            }, 100);
+        }
+        showDate();
+    }, 1000);
+    // text 뿌려주기
+    function showDate() {
+        let now = new Date();
+        year.innerText = now.getFullYear();
+        month.innerText = now.getMonth();
+        date.innerText = now.getDate();
+        day.innerText = days[now.getDay()];
+
+        //Text
+        if(now.getHours() < 10)
+            hour.innerText = "0" + now.getHours();
+        else 
+            hour.innerText = now.getHours();
+        
+        if(now.getMinutes() < 10)
+            minute.innerText = "0" + now.getMinutes();
+        else
+            minute.innerText = now.getMinutes();
+
+        if(now.getSeconds() < 10)
+            second.innerText = "0" + now.getSeconds();
+        else 
+            second.innerText = now.getSeconds();
+        showClock();
+    }
+    /**
+     * 시계를 시간에 맞춰 구현해주는 함수
+    */
+    function showClock(date){
+        if(!date)
+            date = new Date();
+        let hourHand = document.querySelector(".hour-hand");
+        let minuteHand = document.querySelector(".minute-hand");
+        let secondHand = document.querySelector(".second-hand");
+        
+        hourHand.style.transform = `rotate(${(date.getHours() * 30) + (date.getMinutes() * 0.5)}deg)`;
+        minuteHand.style.transform = `rotate(${(date.getMinutes() * 6) + (date.getSeconds() * 0.1)}deg)`;
+        secondHand.style.transform = `rotate(${date.getSeconds() * 6}deg)`;
+    }
+    //애니메이션
+    document.querySelector("#animation-btn").onclick = function(){
+        let span = document.querySelector("#animation-btn span");
+        isAnimate = !isAnimate;
+        if(isAnimate){
+            span.classList.add("on");
+            span.innerText = "켜짐";
+        } else {
+            span.classList.remove("on");
+            span.innerText = "꺼짐";
+        }
+    }
+    showDate();
+</script>
+</body>
+</html>

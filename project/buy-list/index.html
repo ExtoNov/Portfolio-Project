@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구매목록 프로그램</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: '돋움', 'Dotum', sans-serif;
+            background-color: #008080;
+            color: #fff;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .wrap {
+            max-width: 600px;
+            width: calc(100% - 15em);
+            min-width: fit-content;
+            margin: 0 auto;
+            border: 3px ridge #dfd8df;
+            box-shadow: 1px 1px 0px 0px rgba(0,0,0,1);
+            background-color: #bfb8bf;
+            min-height: fit-content;
+            transition: 0.3s;
+        }
+        .wrap .wrap-title{
+            font-size: 12px;
+            text-indent: 2px;
+            background-color: #00007f;
+            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            padding-left: 2px;
+        }
+        .wrap .wrap-title::before {
+            content: '';
+            background-image: url('./image/directory_open_file_mydocs_small-5.png');
+            width: 16px;
+            height: 16px;
+            background-size: 16px 16px;
+            background-position: center;
+            display: inline-block;
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            font-size: 12px;
+            color: #000;
+            gap: 10px;
+        }
+        .input-container input {
+            outline: 2px inset #bfb8bf;
+            border: none;
+            font-family: inherit;
+            width: 20em;
+            box-sizing: border-box;
+            text-indent: 5px;
+            padding-right: 5px;
+        }
+        .input-container input:focus::placeholder {
+            color: transparent;
+        }
+        .input-container button {
+            color: #000;
+            background-color: #c0c0c0;
+            border-left: 2px solid #ededed;
+            border-top: 2px solid #ededed;
+            border-right: 2px solid #404040;
+            border-bottom: 2px solid #404040;
+            font-family: inherit;
+            padding: 3px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .input-container button:active {
+            border-top: 2px solid #000;
+            border-left: 2px solid #000;
+            border-right: 2px solid #efefef;
+            border-bottom: 2px solid #efefef;
+            transform: translateY(1px);
+        }
+
+        .input-title {
+            margin-right: 10px;
+        }
+        .item-list {
+            font-size: 12px;
+            color: #000;
+        }
+        .item-list li {
+            padding: 10px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .item-list li:nth-child(even) {
+            background-color: #a0a0a4;
+        }
+        .item-list a {
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            padding: 3px;
+            color: inherit;
+        }
+        .item-list ul {
+            height: 0;
+            max-height: calc(100vh - 15em);
+            transition: 0.3s;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1 class="wrap-title">구매목록 생성기</h1>
+        <form class="input-container" onsubmit="return false;">
+            <div>
+                <span class="input-title">물품 입력</span><input type="text" id="item-input" placeholder="추가할 물품을 입력하세요.">
+            </div> 
+            <div>
+                <button id="add-btn">추가</button>
+                <button id="reset-btn">초기화</button>
+            </div>
+        </form>
+        <hr>
+        <div class="item-list">
+            <ul></ul>
+        </div>
+    </div>
+<script>
+    let input = document.querySelector("#item-input");
+    let itemList = document.querySelector(".item-list ul");
+    let addBtn = document.querySelector("#add-btn");
+    let resetBtn = document.querySelector("#reset-btn");
+    let itemArray = [];
+    let reloadItem = () => {
+        //list 초기화
+        itemList.innerHTML = "";
+        for(i = 0; i < itemArray.length; i++){
+            itemList.innerHTML += `<li>${itemArray[i]}<a href="#" onclick="removeItem(this);" data-index="${i}">X</a></li>`;
+        }
+        itemList.style.height = (40 * itemArray.length)+"px";
+    }
+    let addItem = () => {
+        let item = input.value;
+        if(!item.trim())
+            return;
+        itemArray.unshift(item);
+        input.value = "";
+        input.focus();
+        reloadItem();
+    }
+    let removeItem = function(e) {
+        let index = e.getAttribute("data-index");
+        itemArray.splice(index, 1);
+        reloadItem();
+    }
+    let resetItem = () => {
+        itemArray.splice(0);
+        reloadItem();
+    }
+
+
+    addBtn.addEventListener("click", () => {
+        addItem();
+    });
+    
+    resetBtn.addEventListener("click", resetItem);
+    
+
+</script>
+</body>
+</html>
