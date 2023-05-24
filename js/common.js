@@ -1,11 +1,11 @@
 let scrollThumb = document.querySelector('.scroll-thumb');
+let scrollTrack = document.querySelector('#scroll-track');
 let scrollHeight;
 let sclTopbtn = document.querySelector('.scroll-top');
 let sectionArray;
 //DOM이 완전히 로드되었을때
 window.addEventListener('DOMContentLoaded', function(){
     scrollHeight = this.document.body.scrollHeight;
-    scrollThumb = this.document.querySelector('.scroll-thumb');
 
     let swiper = new Swiper(".slide-banner", {
         effect: "coverflow",
@@ -41,6 +41,7 @@ window.addEventListener('DOMContentLoaded', function(){
     checkWindowSize();
 });
 //scroll event
+let delay;
 window.addEventListener('scroll', function(){
     let currentScrollY = window.scrollY;
     let docHeight = document.body.offsetHeight;
@@ -54,6 +55,15 @@ window.addEventListener('scroll', function(){
     } else {
         sclTopbtn.style.display = 'none';
     }
+
+    scrollTrack.style.opacity = '1';
+    scrollThumb.style.opacity = '1';
+    if(delay)
+        clearTimeout(delay);
+    delay = setTimeout(function(){
+        scrollTrack.style.opacity = '0.2';
+        scrollThumb.style.opacity = '0.2';
+    }, 1000);
 });
 
 //scroll top
