@@ -226,12 +226,12 @@ console.log(graphicDesignImages)
 graphicDesignImages.forEach(function(element) {
     let image = element.querySelector("img");
     image.addEventListener("click", function(e){
-        makeModal("이미지 상세보기", `<div style="text-align: center;"><img src="${image.src}"></div>`);
+        makeModal("이미지 상세보기", `<div style="text-align: center;"><img src="${image.src}" style="max-height:72vh;"></div>`);
     })
 });
 let clockModal = function(){
     makeModal("Clock", 
-    `<iframe src="./project/clock/index.html" frameborder="0"></iframe>`
+    `<iframe src="./project/clock/index.html" frameborder="0" style="height:70vh"></iframe>`
     )
 }
 let buyListModal = function(){
