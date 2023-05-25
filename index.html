@@ -11,7 +11,7 @@
     <script src="./js/swiper-bundle.min.js"></script>
 </head>
 <body>
-    <div id="scroll-track">
+    <div class="scroll-track">
         <div class="scroll-thumb"></div>
     </div>
     <div id="main-bg">
@@ -59,7 +59,7 @@
                 <div class="content">
                     <h2 class="title">Bugs Redesign</h2>
                     <div>
-                        <img src="./images/bugs-redesign.JPG" alt="bugs-redesign">
+                        <img src="./images/bugs-redesign/bugs-redesign.JPG" alt="bugs-redesign">
                         <div>
                             <div>
                                 <p>음악 스트리밍 서비스인 ‘벅스’의 홈페이지를 저만의 스타일로 다시 디자인하여
@@ -70,15 +70,15 @@
                             </div>
                             <div class="btn-wrap">
                                 <a href="http://ssh960722.dothome.co.kr/" target="_blank" class="btn-primary">웹페이지 살펴보기</a>
-                                <a  class="btn"><span>Style Guide</span></a>
-                                <a  class="btn"><span>Wireframe</span></a>
+                                <a onclick="bugsStyleGuide()" class="btn" id="bugs-style-guide"><span>Style Guide</span></a>
+                                <a onclick="bugsWireframe()" class="btn"><span>Wireframe</span></a>
                             </div>
                         </div>
                     </div>
 
                     <h2 class="title">Selpix</h2>
                     <div>
-                        <img src="./images/selpix.JPG" alt="selpix">
+                        <img src="./images/selpix/selpix.JPG" alt="selpix">
                         <div>
                             <div>
                                 <p>셀프 사진 스튜디오 ‘셀픽스’의 홈페이지를 기존의 리소스들을 이용하여 재구성해보았습니다. 기존의 부족한 여러 리소스들을 기반하여 포토샵과 일러스트레이터를 
@@ -87,8 +87,8 @@
                             </div>
                             <div class="btn-wrap">
                                 <a href="javascript:alert('준비중입니다.')" class="btn-primary">웹페이지 살펴보기</a>
-                                <a  class="btn"><span>Style Guide</span></a>
-                                <a  class="btn"><span>Wireframe</span></a>
+                                <a onclick="selpixStyleGuide()" class="btn"><span>Style Guide</span></a>
+                                <a onclick="selpixWireframe()" class="btn"><span>Wireframe</span></a>
                             </div>
                         </div>
                     </div>
@@ -154,7 +154,7 @@
                             </div>
                             <div class="btn-wrap">
                                 <a href="./project/loading-animation/index.html" target="_blank" class="btn-primary">살펴보기</a>
-                                <a  onclick="return false;" class="btn" id="caution"><span>주의사항</span></a>
+                                <a onclick="loadingAnimationModal()" class="btn"><span>주의사항</span></a>
                             </div>
                         </div>
                     </div>
@@ -167,7 +167,7 @@
                                 <p><strong>사용 언어</strong><span>HTML, CSS, Vanilla JS</span></p>
                             </div>
                             <div class="btn-wrap">
-                                <a href="./project/clock/index.html" target="_blank" class="btn-primary">살펴보기</a>
+                                <a onclick="clockModal()" target="_blank" class="btn-primary">살펴보기</a>
                             </div>
                         </div>
                     </div>
@@ -181,7 +181,7 @@
                                 <p><strong>사용 언어</strong><span>HTML, CSS, Vanilla JS</span></p>
                             </div>
                             <div class="btn-wrap">
-                                <a href="./project/buy-list/index.html" target="_blank" class="btn-primary">살펴보기</a>
+                                <a onclick="buyListModal()" target="_blank" class="btn-primary">살펴보기</a>
                             </div>
                         </div>
                     </div>
@@ -190,8 +190,8 @@
         </section>
         <section id="ending">
             <div class="wrap">
-                <p class="title-lg">Thanks For Watching</p>
-                <h1 class="title-lg">감사합니다<br>
+                <p class="title-lg heading">Thanks For Watching</p>
+                <h1 class="title-lg content">감사합니다<br>
                     남들과 다른 시각을 가진 디자이너<br>
                     신상훈입니다</h1>
             </div>

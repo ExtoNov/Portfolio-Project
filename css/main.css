@@ -1,4 +1,4 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+@import url('../fonts/pretendard.css');
 :root {
     --title-large: 96px;
     --title-normal: 64px;
@@ -79,7 +79,7 @@ strong {font-weight: 700;}
     bottom: -25px;
     position: absolute;
 }
-#scroll-track {
+.scroll-track {
     position: fixed;
     top: 50px;
     right: 20px;
@@ -91,8 +91,8 @@ strong {font-weight: 700;}
     opacity: 0.2;
     transition: 0.3s opacity;
 }
-#scroll-track::before,
-#scroll-track::after {
+.scroll-track::before,
+.scroll-track::after {
     content: '';
     position: absolute;
     left: 0;
@@ -102,14 +102,14 @@ strong {font-weight: 700;}
     display: block;
 }
 
-#scroll-track::before {
+.scroll-track::before {
     top: -25px;
 }
-#scroll-track::after {
+.scroll-track::after {
     bottom: -25px;
 }
 
-#scroll-track .scroll-thumb {
+.scroll-track .scroll-thumb {
     position: absolute;
     top: 0;
     left: -1px;
@@ -120,7 +120,7 @@ strong {font-weight: 700;}
     display: block;
     transition: 0.1s top 0.3s opacity;
     z-index: 10;
-    opacity: 0.2;
+    /* opacity: 1; */
 }
 
 @keyframes fadeIn {
@@ -217,8 +217,8 @@ strong {font-weight: 700;}
     width: min-content;
 }
 #introduce {
-    padding-top: 300px;
-    padding-bottom: 350px;
+    padding-top: 150px;
+    padding-bottom: 200px;
 }
 #introduce .heading::before {
     background-color: var(--pink);
@@ -285,8 +285,8 @@ strong {font-weight: 700;}
 }
 
 #web-design > .wrap {
-    padding-top: 350px;
-    padding-bottom: 400px;
+    padding-top: 200px;
+    padding-bottom: 300px;
 }
 #web-design > .wrap > .heading {
     position: relative;
@@ -416,8 +416,8 @@ strong {font-weight: 700;}
 /* Button end */
 
 #graphic-design > .wrap {
-    padding-top: 400px;
-    padding-bottom: 450px;
+    padding-top: 200px;
+    padding-bottom: 250px;
 }
 
 #graphic-design > .wrap > .heading {
@@ -445,7 +445,7 @@ strong {font-weight: 700;}
 }
 /* 3d slide */
 #graphic-design > .wrap > .swiper {
-    margin-top: 325px;
+    margin-top: 225px;
     overflow: visible;
     user-select: none;
 }
@@ -485,8 +485,8 @@ strong {font-weight: 700;}
 }
 
 #mini-project > .wrap {
-    padding-top: 400px;
-    padding-bottom: 400px;
+    padding-top: 100px;
+    padding-bottom: 200px;
 }
 #mini-project > .wrap > .heading {
     position: relative;
@@ -546,8 +546,8 @@ strong {font-weight: 700;}
     width: 150px;
 }
 #ending > .wrap {
-    padding-top: 400px;
-    padding-bottom: 600px;
+    padding-top: 250px;
+    padding-bottom: 250px;
     text-align: center;
     font-weight: 900;
 }
@@ -629,6 +629,7 @@ footer > .wrap::after {
     z-index: 99;
     transition: 0.3s all;
 }
+
 @keyframes modalOpen {
     0% {
         opacity: 0;
@@ -642,10 +643,11 @@ footer > .wrap::after {
 .modal > .body {
     position: absolute;
     max-width: 85vw;
-    max-height: 85vh;
-    background-color: var(--white);
+    max-height: 95vh;
     min-width: 1000px;
     min-height: 500px;
+    width: max-content;
+    background-color: var(--white);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -655,6 +657,7 @@ footer > .wrap::after {
     box-sizing: border-box;
     line-height: 1.5;
     animation: modalOpen 0.3s forwards;
+    overflow: auto;
 }
 .modal > .body > .title {
     font-size: var(--title-small);
@@ -672,4 +675,13 @@ footer > .wrap::after {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+.modal img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+.modal iframe {
+    width: calc(85vw - 100px);
+    height: calc(95vh - 100px);
 }
