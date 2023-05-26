@@ -1,4 +1,4 @@
-@import url('../fonts/pretendard.css');
+@import url('../fonts/pretendard-jp.css');
 :root {
     --title-large: 96px;
     --title-normal: 64px;
@@ -14,7 +14,7 @@
     --dark: #222;
 }
 html, body {
-    font-family: 'Pretendard', sans-serif;
+    font-family: 'Pretendard JP', sans-serif;
     background-color: var(--bgColor);
     letter-spacing: -0.05em;
     color: var(--white);
