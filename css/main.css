@@ -28,11 +28,11 @@ html, body {
 a {
     text-decoration: none;
     color: inherit;
-    /* cursor: pointer; */
+    cursor: pointer;
 }
-a:-webkit-any-link {
+/* a:-webkit-any-link {
     cursor: none;
-}
+} */
 strong {font-weight: 700;}
 /* .cursor {
     position: fixed;
