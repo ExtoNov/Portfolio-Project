@@ -10,7 +10,7 @@
     --pink: #CB769E;
     --orange: #F75C03;
     --white: #FFFFFF;
-    --bgColor: #444;
+    --bgColor: #333;
     --dark: #222;
 }
 html, body {
@@ -22,16 +22,34 @@ html, body {
     word-break: keep-all;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    cursor: none;
 }
 ::-webkit-scrollbar { display: none; }
 a {
     text-decoration: none;
     color: inherit;
-    cursor: pointer;
+    /* cursor: pointer; */
+}
+a:-webkit-any-link {
+    cursor: none;
 }
 strong {font-weight: 700;}
+.cursor {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 1px solid var(--white);
+    transition-property: width, height, opacity, border;
+    transition-duration: 0.1s;
+    pointer-events: none;
+    z-index: 999;
+    mix-blend-mode: difference;
+}
 ::selection {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 .wrap {
     /* max-width: 1440px; */

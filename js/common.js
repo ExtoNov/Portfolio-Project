@@ -3,6 +3,7 @@ let sclTopbtn = document.querySelector('.scroll-top');
 let sectionArray;
 let scrollTrack = this.document.querySelector('.scroll-track');
 let scrollThumb = this.document.querySelector('.scroll-thumb');
+let cursor = this.document.querySelector('.cursor');
 //DOM이 완전히 로드되었을때
 window.addEventListener('DOMContentLoaded', function(){
     scrollHeight = this.document.body.scrollHeight;
@@ -165,7 +166,26 @@ let checkWindowSize = function(){
 권장 해상도 : 1920x1080`)
 }
 
-
+//mouse effect
+window.onmousemove = function(e){
+    cursor.style.left = e.clientX+'px';
+    cursor.style.top = e.clientY+'px';
+    console.log(cursor.style)
+}
+window.onmousedown = function(e) {
+    cursor.style.opacity = '0.5';
+    cursor.style.borderColor = 'var(--orange)';
+    cursor.style.width = '48px';
+    cursor.style.height = '48px';
+    cursor.style.mixBlendMode = 'normal';
+}
+window.onmouseup = function(e) {
+    cursor.style.opacity = '1';
+    cursor.style.borderColor = 'var(--white)';
+    cursor.style.width = '32px';
+    cursor.style.height = '32px';
+    cursor.style.mixBlendMode = 'difference';
+}
 
 
 // Modal Functions
@@ -222,7 +242,6 @@ let selpixWireframe = function(){
     </div>`)
 };
 let graphicDesignImages = document.querySelectorAll('.swiper .swiper-slide');
-console.log(graphicDesignImages)
 graphicDesignImages.forEach(function(element) {
     let image = element.querySelector("img");
     image.addEventListener("click", function(e){
