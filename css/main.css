@@ -22,7 +22,7 @@ html, body {
     word-break: keep-all;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    cursor: none;
+    /* cursor: none; */
 }
 ::-webkit-scrollbar { display: none; }
 a {
@@ -34,7 +34,7 @@ a:-webkit-any-link {
     cursor: none;
 }
 strong {font-weight: 700;}
-.cursor {
+/* .cursor {
     position: fixed;
     transform: translate(-50%, -50%);
     width: 32px;
@@ -47,7 +47,7 @@ strong {font-weight: 700;}
     pointer-events: none;
     z-index: 999;
     mix-blend-mode: difference;
-}
+} */
 ::selection {
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -197,6 +197,7 @@ strong {font-weight: 700;}
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 0.5px var(--white);
     width: max-content;
+    opacity: 0.5;
 }
 #main-visual > .wrap > .content {
     display: flex;

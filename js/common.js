@@ -167,25 +167,25 @@ let checkWindowSize = function(){
 }
 
 //mouse effect
-window.onmousemove = function(e){
-    cursor.style.left = e.clientX+'px';
-    cursor.style.top = e.clientY+'px';
-    console.log(cursor.style)
-}
-window.onmousedown = function(e) {
-    cursor.style.opacity = '0.5';
-    cursor.style.borderColor = 'var(--orange)';
-    cursor.style.width = '48px';
-    cursor.style.height = '48px';
-    cursor.style.mixBlendMode = 'normal';
-}
-window.onmouseup = function(e) {
-    cursor.style.opacity = '1';
-    cursor.style.borderColor = 'var(--white)';
-    cursor.style.width = '32px';
-    cursor.style.height = '32px';
-    cursor.style.mixBlendMode = 'difference';
-}
+// window.onmousemove = function(e){
+//     cursor.style.left = e.clientX+'px';
+//     cursor.style.top = e.clientY+'px';
+//     console.log(cursor.style)
+// }
+// window.onmousedown = function(e) {
+//     cursor.style.opacity = '0.5';
+//     cursor.style.borderColor = 'var(--orange)';
+//     cursor.style.width = '48px';
+//     cursor.style.height = '48px';
+//     cursor.style.mixBlendMode = 'normal';
+// }
+// window.onmouseup = function(e) {
+//     cursor.style.opacity = '1';
+//     cursor.style.borderColor = 'var(--white)';
+//     cursor.style.width = '32px';
+//     cursor.style.height = '32px';
+//     cursor.style.mixBlendMode = 'difference';
+// }
 
 
 // Modal Functions
