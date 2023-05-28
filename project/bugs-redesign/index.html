@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bugs Redesign</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <link rel="stylesheet" type="text/css" href="./css/tablet.css" />
+    <link rel="stylesheet" type="text/css" href="./css/mobile.css" />
+    <script src="./js/swiper-bundle.min.js"></script>
+    <style>
+        * {
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <div class="container">
+                <h1 class="logo"><a href="./index.html"><img src="./images/logo-white.svg" alt="logo"></a></h1>
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link" data-text="PR">PR</a></li>
+                    <li><a href="#" class="nav-link" data-text="주주구성">주주구성</a></li>
+                    <li><a href="#" class="nav-link" data-text="재무정보">재무정보</a></li>
+                    <li><a href="#" class="nav-link" data-text="공고">공고</a></li>
+                    <li><a href="#" class="nav-link" data-text="RECRUIT">RECRUIT</a></li>
+                </ul>
+                <a href="#" onclick="return false;" class="nav-mobile-menu">
+                    <img src="./images/menu.svg" alt="menu">
+                </a>
+            </div>
+        </nav>
+    </header>
+    <div class="main-bg">
+        <aside id="pagination"></aside>
+       <section id="main-visual">
+            <div class="container">
+                <div class="wrap">
+                    <!-- <img src="./images/logo-white.svg" alt="logo" class="main-logo"> -->
+                    <svg class="main-logo" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="레이어_1" x="0" y="0" version="1.1" viewBox="0 0 283.5 110"><path d="M38 1C66.3.6 72.7 22.7 72.7 37.5S61.2 54.3 61.2 54.3C71.9 56 80.4 65.4 80.4 84.4S62 104.5 62 104.5l-30.9 2.2-16.9-73.6c0-5.6 3.7-10.1 11-10.1s8.8 6.6 8.8 6.6l3.3 15.2H47c1.1 0 9.6-2.1 6.6-14.8-2.9-12.7-12.8-12.9-12.8-12.9H17.3c-7.8 0-11.6-6.7-11.6-6.7L0 0l38 1zm7.8 88 9.2-.8s7.2-.4 7.2-9.7c0-9.3-4.8-17.7-12.8-17.7h-8.8L45.8 89zM83 25.1h20l4.2 65.6s.3 7.3 6.4 7.3c6.1 0 6.2-6.5 6.2-7.4 0-1-1.6-60.8-1.6-60.8s1.1-7.8 9.3-7.8c8.2 0 8.8 8 8.8 8l1 76.7s-6.2.6-8.1.6c-2 0-7.3-1-8.9-5.9 0 0-2.9 8.6-15.3 8.6-12.3 0-15.3-12.1-15.3-12.1L83 25.1zM164.6 4.6s11-1.2 15.3 10.5c0 0 2.5-7.4 11.1-7.4h5.9L189 77.3s-.5 18.6-23.6 18.6c0 0-18.7 1.3-19.7-14.4 0 0-.1-8.5 7.1-8.5 0 0 7-.7 7 7.3 0 0 .5 6.6 5.7 6.6s7.9-3.1 9.1-22.8c0 0-3.9 7.1-15.1 7.1-11.1 0-16.6-6.9-15.3-27.8 1.6-20.6 1.2-37.9 20.4-38.8zm-1.1 23c-.4 2.8-1.9 20.6-1.9 23.8 0 3.1.9 9.2 6.4 9.2s6.5-5.3 7.1-8.9c.7-3.6 1.8-12 2.3-23.3.5-11.2-6.1-11-6.1-11-6.1-.1-7.4 7.3-7.8 10.2zM196.8 70.3h14.8s-3.7 11.6 3 11.6 7.5-9.7 7.5-9.7.7-5.9-7-10.1c-7.7-4.2-13.7-11.4-13.1-20.4.6-9 4.9-29.3 26.5-29.3 0 0 16.3-1.1 16.3 14.9 0 15.9-7.9 16.4-9.9 16.4 0 0-6.2-.1-6.2-5.9 0-5.8 2.4-11.1-2.9-11.1-5.4 0-7.6 7.5-7.6 9.9 0 2.3.2 5.3 5 9.1s13.6 8.4 13.6 20.3-9.1 28-26.2 28-15.5-12-13.8-23.7zM244.4 77.8c0 4.2 3.4 7.6 7.6 7.6 4.2 0 7.6-3.4 7.6-7.6 0-4.2-3.4-7.6-7.6-7.6-4.2.1-7.6 3.5-7.6 7.6zM262.8 8.3h20.6L262 61.8s-1.8 4.6-6.5 4.6c0 0-6.1.2-4.8-7.1l12.1-51z" class="st0"/></svg>
+                    <div>
+                        <h1>음악에 대한 다양한 가치를 발견하고,<br>발전시키는 사람들이 모인 곳</h1>
+                    </div>
+                </div>
+            </div>
+       </section>
+       <section id="service">
+            <div class="container">
+                <div class="content">
+                    <h1>SUPER SOUND, BUGS</h1>
+                    <p>국내 최대 규모의 음원을<br>
+                        차별화된 고음질로 다양한 플랫폼을 통해<br>
+                        장소에 제약 없이 제공합니다.</p>
+                </div>
+                <div class="circle dashed">
+                    <img src="./images/headphones.png" alt="headphones"/>
+                </div>
+            </div>
+       </section>
+       <section id="invest">
+            <div class="container">
+                <img src="./images/cassette.svg" alt="cassette">
+                <div class="content">
+                    <h1>라이선스 사업 / 디지털 음원 유통 및 투자</h1>
+                    <p>우수한 음원을 발굴하고, 체계적인 투자와<br>
+                        관리 시스템으로 사업파트너에게<br>
+                        안정적인 비즈니스 환경을 제공합니다.</p>
+                </div>
+            </div>
+       </section>
+       <section id="pr">
+            <div class="container">
+                <div class="content">
+                    <h1>PR</h1>
+                    <a href="#">더보기<div></div></a>
+                </div>
+
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <a class="card-container swiper-slide" href="#">
+                            <div class="card-image" style="background-image: url(./images/pr/202302021522049746_l.jpg);"></div>
+                            <div class="card-content">
+                                <p>NHN벅스, GS25 플래그십 스토어 도어투성수점에 ‘essential;(에센셜)’ 음악 큐레이션 콘텐츠 제공</p>
+                            </div>
+                        </a>
+                        <a class="card-container swiper-slide" href="#">
+                            <div class="card-image" style="background-image: url(./images/pr/1671160612-22121610.jpg);"></div>
+                            <div class="card-content">
+                                <p>NHN벅스, 연말 프로모션 ‘BUGS HOLIDAY IS COMING!’ 실시</p>
+                            </div>
+                        </a>
+                        <a class="card-container swiper-slide" href="#">
+                            <div class="card-image" style="background-image: url(./images/pr/02f10ab5.jpg);"></div>
+                            <div class="card-content">
+                                <p>NHN벅스, 벅스 앱에서 만나는 ‘essential;(에센셜)’ 선보여</p>
+                            </div>
+                        </a>
+                        <a class="card-container swiper-slide" href="#">
+                            <div class="card-image" style="background-image: url(./images/pr/20221209095011.jpg);"></div>
+                            <div class="card-content">
+                                <p>NHN벅스, ‘벅스 나눔 Campaign’ 기부 챌린지 실시…“음악으로 나누는 착한 마음”</p>
+                            </div>
+                        </a>
+                        <a class="card-container swiper-slide" href="#">
+                            <div class="card-image" style="background-image: url(./images/pr/20221202092005.jpg);"></div>
+                            <div class="card-content">
+                                <p>NHN벅스, (사)함께만드는세상과 손잡고 자립준비청년 지원하는 음악 상품 출시</p>
+                            </div>
+                        </a>
+                        <a class="card-container swiper-slide" href="#">
+                            <div class="card-image" style="background-image: url(./images/pr/20221019091750.jpg);"></div>
+                            <div class="card-content">
+                                <p>NHN벅스, hy(한국야쿠르트)와 ‘Bugs & Fredit’ 제휴 이벤트 실시</p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- If we need pagination -->
+                    <!-- <div class="swiper-pagination"></div> -->
+                
+                    <!-- If we need navigation buttons -->
+                    <!-- <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div> -->
+                
+                    <!-- If we need scrollbar -->
+                    <!-- <div class="swiper-scrollbar"></div> -->
+                </div>
+            </div>
+            <div class="marquee">
+                <div class="track">
+                    <div>
+                        <span>PUBLIC RELATION</span>
+                        <span>PUBLIC RELATION</span>
+                        <span>PUBLIC RELATION</span>
+                    </div>
+                    <div>
+                        <span>PUBLIC RELATION</span>
+                        <span>PUBLIC RELATION</span>
+                        <span>PUBLIC RELATION</span>
+                    </div>
+                </div>
+            </div>
+       </section>
+       <section id="recruit">
+            <div class="container">
+                <img src="./images/recruit-male.png" alt="recruit-img">
+                <div class="content">
+                    <h1>RECRUIT</h1>
+                    <p>음악으로 만드는 따뜻한 세상,<br>
+                        벅스에서 함께 꿈을 이루어 가실 분을 기다립니다.</p>
+                    <a class="link-button" href="#">채용공고</a>
+                </div>
+            </div>
+       </section>
+       <section id="address">
+            <div class="container">
+                <div class="content">
+                    <div>
+                        <h1>(주)엔에이치엔벅스</h1>
+                        <p>경기도 성남시 분당구 대왕판교로 645번길 16 플레이뮤지엄</p>
+                    </div>
+                    <div>
+                        <h1>고객센터</h1>
+                        <p>문의하기 : <a href="mailto:help@help.bugs.co.kr">help@help.bugs.co.kr</a> / 1566-4882(유료)<br>
+                            운영시간 : 09:00 ~ 18:00(월~금)</p>
+                    </div>
+                </div>
+                <img src="./images/map-icon.png" alt="map-icon">
+            </div>
+       </section>
+    </div>
+    <footer id="footer">
+        <div class="container">
+            <div class="content">
+                <ul>
+                    <li><a href="#"><img src="./images/footer/logo-1.png" alt="inside-nhn"></a></li>
+                    <li><a href="#"><img src="./images/footer/logo-2.png" alt="toast"></a></li>
+                    <li><a href="#"><img src="./images/footer/logo-3.png" alt="hangame"></a></li>
+                    <li><a href="#"><img src="./images/footer/logo-4.png" alt="nhn"></a></li>
+                </ul>
+                <div class="footer-link">
+                    <a href="#">개인정보 처리방침</a>
+                    <span>© NHN Bugs Corp. All rights reserved.</span>
+                </div>
+            </div>
+            <div>
+                <a href="javascript:void(0);" id="site-dropbox-btn">FAMILY SITE</a>
+                <ul class="site-dropbox">
+                    <li><a href="http://www.nhn.com" target="_blank">NHN</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        let currentPage; //현재 보고 있는 페이지
+        let sectionMap = new Map(); // section 요소가 저장된 map
+        let paginationBtnMap = new Map(); // Pagination 버튼이 저장된 map
+        let isDesktop; //desktop 여부
+        let windowWidth; //window size check (for iphone, ipad)
+        // Scroll function
+        const sectionArray = document.querySelectorAll("section");//section 요소가 담긴 배열
+        const paginationContainer = document.querySelector("#pagination");//pagination 컨테이너
+
+
+        //항상 스크롤 최상단
+        window.onbeforeunload = function () {
+            window.scrollTo(0,0);
+        };
+        //키보드로 화면 이동 막기
+        window.addEventListener("keydown", function(e) {
+            // space and arrow keys and page up/down
+            if([32, 33, 34, 37, 38, 39, 40].indexOf(e.keyCode) > -1)
+                e.preventDefault();
+            
+        }, false);
+        
+        document.addEventListener('DOMContentLoaded', function() {
+
+            //페이지 load시 currentPage변수 초기화
+            currentPage=0;
+
+            //PR slide 초기화
+            const swiper = new Swiper('.swiper', {
+            freeMode: true,
+            slidesPerView: 'auto',
+            spaceBetween: 35,
+            // Optional parameters
+            // direction: 'horizontal',
+            // loop: true,
+
+            // If we need pagination
+            // pagination: {
+            //     el: '.swiper-pagination',
+            // },
+
+            // Navigation arrows
+            // navigation: {
+            //     nextEl: '.swiper-button-next',
+            //     prevEl: '.swiper-button-prev',
+            // },
+
+            // And if we need scrollbar
+            // scrollbar: {
+            //     el: '.swiper-scrollbar',
+            // },
+            });
+            
+            //Section 태그 탐색후 pagination 구성
+            for(let index=0; index<sectionArray.length; ++index) {
+                let section = sectionArray[index];
+                //sectionMap 구성
+                sectionMap.set(index, section);
+
+                //pagination 구성
+                let btnContainer = document.createElement("a");
+                btnContainer.href = "javascript:void(0);";
+                btnContainer.addEventListener("click", function(){
+                    section.scrollIntoView({behavior: "smooth", block: "center"});
+                    currentPage=index;
+                    clearBtnActive();
+                    btnContainer.classList.add("active");
+                    changeLogo(currentPage);
+                });
+                paginationBtnMap.set(index, btnContainer);
+                if(index==0)
+                    btnContainer.classList.add("active");
+                paginationContainer.appendChild(btnContainer);
+            }
+            
+            //wheel event
+            document.querySelector("body").addEventListener("wheel", function(event){
+                if(!isDesktop)
+                    return;
+                event.preventDefault();
+                let isWheelDown = event.deltaY>0;
+                if(isWheelDown){
+                    ++currentPage;
+                    if(currentPage>sectionMap.size-1) {
+                        currentPage=sectionMap.size;
+                        document.querySelector("#footer").scrollIntoView({behavior: "smooth", block: "center"});
+                        return;
+                    }
+                } else {
+                    if(currentPage>0)
+                        --currentPage;
+                    else
+                        return;
+                }
+                sectionMap.get(currentPage).scrollIntoView({behavior: "smooth", block: "center"});
+                clearBtnActive();
+                paginationBtnMap.get(currentPage).classList.add("active");
+                changeLogo(currentPage);
+
+            }, {passive: false});
+            //Wheel Click Block 
+            document.querySelector("body").addEventListener("mousedown", function(event){
+                //1:좌, 2:휠, 3:우
+                if(event.which==2)
+                    event.preventDefault();
+            });
+            
+            //window size check
+            isDesktop = window.matchMedia('(min-width: 1439px)').matches;
+
+            //always on section top when resize
+            windowWidth = window.innerWidth;
+            window.addEventListener("resize", function(){
+                // Desktop에만 적용
+                isDesktop = window.matchMedia('(min-width: 1439px)').matches;
+                if(isDesktop && window.innerWidth != windowWidth)
+                    sectionMap.get(currentPage).scrollIntoView({block: "start"});
+            });    
+
+               
+            
+            
+            
+            
+
+            //scroll trigger animation
+            const contentObserver = new IntersectionObserver((e) => {
+                e.forEach(element => {
+                    //on view
+                    if(element.isIntersecting){
+                        element.target.style.opacity = '1';
+                        element.target.style.transform = 'translateY(0)';
+                    } else {
+                        //off view
+                        element.target.style.opacity ='0';
+                        element.target.style.transform = 'translateY(100px)';
+                    }
+                });   
+            });
+            const imageObserver = new IntersectionObserver((e) => {
+                e.forEach(element => {
+                    //on view
+                    if(element.isIntersecting){
+                        element.target.style.opacity = '1';
+                        element.target.style.transform = 'translateX(0)';
+                    } else {
+                        //off view
+                        element.target.style.opacity ='0';
+                        element.target.style.transform = 'translateX(-100px)';
+                    }
+                });
+            });
+            
+            for(let i = 1; i < sectionArray.length; i++){
+                let content = sectionArray[i].querySelector('.content');
+                let image = sectionArray[i].querySelector('img');
+                contentObserver.observe(content);
+                if(image)
+                    imageObserver.observe(image);
+            }
+
+            if(!isDesktop){
+                //pr offset setting
+                let prSectionOffset = sectionMap.get(3).getBoundingClientRect();
+                console.log(prSectionOffset)
+                let navLinks = document.querySelectorAll('nav .nav-link');
+                let logo = document.querySelector("h1.logo");
+                window.onscroll = function(){
+                    if(window.scrollY > prSectionOffset.top && window.scrollY < prSectionOffset.bottom){
+                        logo.classList.add("color");
+                        navLinks.forEach(function(navLink) {
+                            navLink.style.color = "var(--dark)";
+                        });
+                    } else {
+                        logo.classList.remove("color");
+                        navLinks.forEach(function(navLink) {
+                            navLink.style.color = "var(--white)";
+                        });
+                    }
+                        
+                }
+            }
+        }, false);
+
+        //선택된 pagination 제거
+        let clearBtnActive = function(){
+            //선택된 pagination 제거
+            if(paginationContainer.querySelector(".active"))
+                paginationContainer.querySelector(".active").classList.remove("active");
+        };
+        //header logo 색상 변경
+        let changeLogo = function(currentPage){
+            let logo = document.querySelector("h1.logo");
+            let navLinks = document.querySelectorAll('nav .nav-link');
+            if(currentPage==3){
+                logo.classList.add("color");
+                navLinks.forEach(function(navLink) {
+                    navLink.style.color = "var(--dark)";
+                });
+            } else if(logo.classList.contains("color")){//이미 색상 로고면
+                logo.classList.remove("color");
+                navLinks.forEach(function(navLink) {
+                    navLink.style.color = "var(--white)";
+                });
+            }
+            
+        };
+    </script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
