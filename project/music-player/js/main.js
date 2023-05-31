@@ -1,8 +1,4 @@
-let currentIndex = 0;
-let playlist = [];
-// playlist.push(new Audio('./audio/Seasonal Crime (Feat. Saebit).mp3'));
-// playlist.push(new Audio('./audio/Maze (Feat. Saebit).mp3'));
-// playlist.push(new Audio('./audio/Mars Attacks.mp3'));
+let currentIndex = 0; //track start number
 let audioInfo = [];
 audioInfo.push({
     ImageSource : './image/20556620.jpg',
@@ -77,7 +73,60 @@ audioInfo.push({
     ImageSource : './image/20400935.jpg',
     SongTitle : '화성침공',
     AlbumName : '화성침공',
-    AudioSource : './audio/Mars Attacks.mp3'
+    AudioSource : './audio/Mars Attacks.mp3',
+    Lyric : 
+    `<p data-start="3.6" data-end="27.5">빠빠 빠빠 빠빠 빠빠</p>
+    <p data-start="27.5" data-end="32">아홉시에 뉴스를 보고야 알았어</p>
+    <p data-start="33" data-end="38">서울시 밤 하늘에 뜬 우주 비행선</p>
+    <p data-start="38" data-end="39.7">현실일까</p>
+    <p data-start="39.7" data-end="42.6">삐삐삐 무슨 소리 들린다</p>
+    <p data-start="42.6" data-end="45.8">빼빼빼 딴사람은 안 들리나</p>
+    <p data-start="45.8" data-end="49.5">뿌뿌뿌 하필 나에게 말을 거는데</p>
+    <p data-start="49.5" data-end="51.5">이제 어떡해</p>
+    <p data-start="51.5" data-end="54">서울 비상사태 십 분 전</p>
+    <p data-start="54" data-end="56.5">오늘 지구는 일촉즉발</p>
+    <p data-start="56.5" data-end="60">이런 막중한 임무가 하필 내게</p>
+    <p data-start="60" data-end="63">맡겨지게 된 건데</p>
+    <p data-start="63" data-end="66">길게 드리워진 그림자</p>
+    <p data-start="66" data-end="69">뭔지 알 수 없는 실루엣</p>
+    <p data-start="69" data-end="72.5">먼저 다가가기는 어렵겠어요</p>
+    <p data-start="72.5" data-end="74.6">다음에 와줄래요</p>
+    <p data-start="74.6" data-end="75.8">돌아가 줘요</p>
+    <p data-start="75.8" data-end="87">빠빠 빠빠 빠빠 빠빠</p>
+    <p data-start="87" data-end="93">현관문을 똑똑 두드리는 낯선 자</p>
+    <p data-start="93" data-end="97.5">검은 양복 까만 선글라스 이 인조</p>
+    <p data-start="97.5" data-end="99.6">저.. 밤인데요</p>
+    <p data-start="99.6" data-end="102.7">삐삐삐 비밀 요원입니다</p>
+    <p data-start="102.7" data-end="105.8">빼빼빼 같이 가주셔야겠습니다</p>
+    <p data-start="105.8" data-end="109">뿌뿌뿌 세계는 당신이 필요합니다</p>
+    <p data-start="109" data-end="111.1">당황스럽게</p>
+    <p data-start="111.1" data-end="114">서울 비상사태 오 분 전</p>
+    <p data-start="114" data-end="116.8">오늘 지구는 일촉즉발</p>
+    <p data-start="116.8" data-end="120.3">이런 막중한 임무가 하필 내게</p>
+    <p data-start="120.3" data-end="123">주어지게 된 건데</p>
+    <p data-start="123" data-end="126">길게 드리워진 그림자</p>
+    <p data-start="126" data-end="128.8">뭔지 알 수 없는 실루엣</p>
+    <p data-start="128.8" data-end="132.5">먼저 다가가기는 어렵겠어요</p>
+    <p data-start="132.5" data-end="134.5">다음에 와줄래요</p>
+    <p data-start="136" data-end="138.6">귓가에 맴맴 도는</p>
+    <p data-start="138.6" data-end="142.7">소리는 난수 방송이라는데</p>
+    <p data-start="142.7" data-end="148">이 서울 땅에는 어쩐 일이십니까</p>
+    <p data-start="148" data-end="151.5">서울 비상사태 삼 분 전</p>
+    <p data-start="151.5" data-end="154.5">오늘 지구는 일촉즉발</p>
+    <p data-start="154.5" data-end="157.9">지금 세계의 시선이 다 몰렸다</p>
+    <p data-start="157.9" data-end="161.2">난 몰라요 미안해요</p>
+    <p data-start="161.2" data-end="163.5">길게 드리워진 그림자</p>
+    <p data-start="163.5" data-end="166.4">뭔지 알 수 없는 실루엣</p>
+    <p data-start="166.4" data-end="170">먼저 다가가기는 어렵겠어요</p>
+    <p data-start="170" data-end="171.8">다음에 와줄래요</p>
+    <p data-start="171.8" data-end="173">나 죽고 없을 때</p>
+    <p data-start="173" data-end="212">빠빠 빠빠 빠빠 빠빠</p>`
+});
+audioInfo.push({
+    ImageSource : './image/20548395.jpg',
+    SongTitle : `I'll be`,
+    AlbumName : 'Just Living',
+    AudioSource : `./audio/Sincere - I'll be.mp3`
 });
 
 
@@ -99,10 +148,12 @@ let isLyricOpened = false;
 let lyricContainer = document.querySelector('.lyric-container');
 let lyricWrapper = document.querySelector('.lyric-container .wrapper');
 let lyricIndex = 0;
-let lyricTransformPixel = 0;
 let lyrics = lyricWrapper.querySelectorAll('p');
 let repeatBtn = document.querySelector('.repeat');
 let repeatStatus = 2; // 0:repeat all 1: single song repeat 2: no repeat
+let shuffleBtn = document.querySelector('.shuffle');
+let shuffleStatus = 0; // 0: no shuffle 1: shuffle
+let shuffleHistory = [];
 let background = document.querySelector('.bg');
 let albumArt = document.querySelector('.player .album-art');
 let songName = document.querySelector('.player .song-name');
@@ -140,16 +191,36 @@ let setAudioLength = function(audio){
 //previous song
 let getPrevAudio = function(){
     currentAudio.pause();
-    currentIndex--;
+    let shuffleIndex;
+    if(shuffleStatus == 0)
+        currentIndex--;
+    else if(shuffleStatus == 1){
+        currentIndex = shuffleHistory.pop();
+    }
+    
+        
     if(currentIndex < 0)
-        currentIndex = audio.length - 1;
+        currentIndex = audioInfo.length - 1;
     getAudioInfo();
 }
 
 //next song
 let getNextAudio = function(){
     currentAudio.pause();
-    currentIndex++;
+    let shuffleIndex;
+    if(shuffleStatus == 0)
+        currentIndex++;
+    else if(shuffleStatus == 1){
+        while (true) {
+            shuffleIndex = Math.floor((Math.random() * audioInfo.length));
+            if(shuffleIndex != currentIndex){
+                shuffleHistory.push(shuffleIndex);
+                currentIndex = shuffleIndex;
+                break;
+            }
+        }
+    }
+
     if(currentIndex > audioInfo.length - 1)
         currentIndex = 0;
     getAudioInfo();
@@ -159,8 +230,15 @@ let getAudioInfo = function(isInitialize){
     currentAudio = new Audio(audioInfo[currentIndex].AudioSource);
     currentAudio.currentTime = 0;
     currentAudio.onloadeddata = function (){
+        //lyric Initialize
+        lyricIndex = 0;
+        lyricWrapper.style.transform = `translateY(0px)`;
+
         getCurrentTime(currentAudio);
         setAudioLength(currentAudio);
+        currentAudio.onended = function(){
+            repeatAudio(currentAudio);
+        }
     }
     if(!isInitialize)
         isPlaying(currentAudio);
@@ -187,12 +265,9 @@ let getAudioInfo = function(isInitialize){
     if(audioInfo[currentIndex].Lyric){
         lyricWrapper.innerHTML = audioInfo[currentIndex].Lyric;
         lyricClick();
-    } else 
+    } else {
         lyricWrapper.innerHTML = `<h1>가사가 지원되지 않는 노래입니다.</h1>`
-    
-    //lyric Initialize
-    lyricIndex = 0;
-    lyricWrapper.style.transform = `translateY(${-(lyricIndex * 30)}px)`;
+    }
 }
 
 let isPlaying = function(audio){
@@ -216,24 +291,32 @@ playBtn.addEventListener('click', function(){
 });
 
 //initialize for first song 
-currentAudio.onloadeddata = function (){
+currentAudio.onloadeddata = function(){
     getCurrentTime(currentAudio);
     setAudioLength(currentAudio);
+    currentAudio.onended = function(){
+        repeatAudio(currentAudio);
+    }
 }
 
 //stop or loop when song ended 
-currentAudio.addEventListener('ended', function(){
+let repeatAudio = function(audio){
     // 0 repeat 1 single 2 no repeat
     if(repeatStatus == 0) {
-
+        getNextAudio();
     } else if(repeatStatus == 1) {
-
+        audio.currentTime = 0;
+        audio.play();
+        playBtn.style.backgroundImage = "url('./image/paused.svg')"
     } else if(repeatStatus == 2) {
-        currentAudio.pause();
-        currentAudio.currentTime = 0;
+        audio.currentTime = 0;
+        audio.pause();
         playBtn.style.backgroundImage = "url('./image/play.svg')"
     }
-});
+    //lyric Initialize
+    lyricIndex = 0;
+    lyricWrapper.style.transform = `translateY(0px)`;
+}
 
 //paused event
 currentAudio.addEventListener('pause', function(e){
@@ -354,6 +437,7 @@ lyricBtn.addEventListener('click', showLyric);
 // show lyrics 
 let getCurrentLyric = function(audio){
     lyrics = lyricWrapper.querySelectorAll('p');
+    // let isLatest;
     for(let i = 0; i< lyrics.length; ++i) {
         let currentLyric = lyrics[i];
         if(currentLyric.dataset.start < audio.currentTime &&
@@ -364,11 +448,13 @@ let getCurrentLyric = function(audio){
             currentLyric.classList.remove('before');
             currentLyric.classList.remove('now');
         }
-        if(i < lyricIndex) {
+        if(currentLyric.dataset.end < audio.currentTime) {
             currentLyric.classList.add('before');
             // currentLyric.classList.remove('now');
+            // isLatest = i;
+            lyricIndex = i;
         }   
-        if(i > lyricIndex) {
+        if(currentLyric.dataset.start > audio.currentTime) {
             currentLyric.classList.add('after');
             currentLyric.classList.remove('now');
         }
@@ -392,24 +478,40 @@ let lyricClick = function(){
 lyricClick();
 //change repeat status 
 repeatBtn.addEventListener('click', function(e){
-    repeatBtn++;
+    repeatStatus++;
     //initialize
-    if(repeatBtn > 2)
-        repeatBtn = 0;
+    if(repeatStatus > 2)
+        repeatStatus = 0;
 
     let image = repeatBtn.querySelector('img');
     let text = repeatBtn.querySelector('span');
     if(repeatStatus == 0) {
         image.setAttribute("src", "./image/repeat.svg");
-        text.innerText("전곡반복");
+        text.innerText = "전곡반복";
     } else if(repeatStatus == 1) {
         image.setAttribute("src", "./image/single-song-repeat.svg");
-        text.innerText("한곡반복");
+        text.innerText = "한곡반복";
     } else if(repeatStatus == 2) {
         image.setAttribute("src", "./image/close.svg");
-        text.innerText("반복없음");
+        text.innerText = "반복없음";
     }
 })
+//change shuffle status
+shuffleBtn.addEventListener('click', function(e){
+    shuffleStatus++;
+    if(shuffleStatus > 1)
+    shuffleStatus = 0;
+
+    let image = shuffleBtn.querySelector('img');
+    let text = shuffleBtn.querySelector('span');
+    if(shuffleStatus == 0){
+        image.setAttribute("src", "./image/shuffle-off.svg");
+        text.innerText = '순차';
+    } else if(shuffleStatus == 1){
+        image.setAttribute("src", "./image/shuffle.svg");
+        text.innerText = '무작위';
+    }
+});
 
 
 
