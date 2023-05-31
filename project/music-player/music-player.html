@@ -9,16 +9,16 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <div class="bg" style="background-image: url(./image/20556620.jpg);">
+    <div class="bg">
         <div class="wrap">
             <div class="player">
-                <div class="album-art" style="background-image: url(./image/20556620.jpg);"></div>
-                <h1 class="song-name">계절범죄 (Feat. 새빛)</h1>
-                <p class="album-name">계절범죄</p>
+                <div class="album-art"></div>
+                <h1 class="song-name"></h1>
+                <p class="album-name"></p>
                 <div class="control">
-                    <a href="#" class="previous" onclick="alert('work in progress')"></a>
+                    <a href="#" class="previous" onclick="getPrevAudio()"></a>
                     <a href="#" class="play"></a>
-                    <a href="#" class="next"  onclick="alert('work in progress')"></a>
+                    <a href="#" class="next"  onclick="getNextAudio()"></a>
                 </div>
                 <div class="track">
                     <input type="range" min="0" step="0.01" id="progress-bar">
@@ -30,62 +30,6 @@
             </div>
             <div class="lyric-container">
                 <div class="wrapper">
-                    <p class="now" data-time="10">더워지는 바람에</p>
-                    <p data-time="14">눈을 스쳐 뜨던 밤처럼</p>
-                    <p data-time="17">옅어지는 그날의 작은 기억이</p>
-                    <p data-time="22">잊혀져 매일 눈을 뜰 때면</p>
-                    <p>흐려져 오늘도 눈을 감으면</p>
-                    <p>또 사라져버릴 듯한 어제를 그려가</p>
-                    <p>떨어지는 그림자 사이에</p>
-                    <p>맴도는 향기가 조용히 너를 불어와</p>
-                    <p>선명했던 날들도 어느새</p>
-                    <p>다 지워 버린 채</p>
-                    <p>차갑게 잊혀져만 가</p>
-                    <p>흐렸던 날들만 바람에 날아가거라</p>
-                    <p>베어 물은 듯 추억만 고이 남은 채</p>
-                    <p>지샌 하늘 위 피어진 구름처럼 사라지는</p>
-                    <p>마음은 후회도 잊어버린 채</p>
-                    <p>내 생에 피어라 가장 아픈 겨울아</p>
-                    <p>지난날처럼 길고 멀었던</p>
-                    <p>그리운 계절을 불러</p>
-                    <p>봄바람이 스치듯 떠난 밤</p>
-                    <p>내 안의 계절을 다 팔아 버린 밤</p>
-                    <p>마음에는 어떤 소리가 들려?</p>
-                    <p>아아</p>
-                    <p>깊어지는 실루엣 사이로</p>
-                    <p>눈 부신 바람이 또다시 너를 불어와</p>
-                    <p>선명했던 날들도 이제는</p>
-                    <p>다 잊어버린 채</p>
-                    <p>조용히 흩어져만 가</p>
-                    <p>괴로운 날들만 바람에 날아가거라</p>
-                    <p>베어 물은 듯 추억만 고이 남은 채</p>
-                    <p>지샌 새벽 끝 옅어진 달빛처럼 흐려지는</p>
-                    <p>기억은 슬픔도 잊어버린 채</p>
-                    <p>내 생에 지어라 가장 짙은 여름아</p>
-                    <p>지난날처럼 길고 멀었던</p>
-                    <p>그리운 계절을 불러</p>
-                    <p>하얗고 하얗던 내 계절아</p>
-                    <p>끝이 없고 그치지 않는 비에도</p>
-                    <p>밝아오니까</p>
-                    <p>그 시간이 두려워도</p>
-                    <p>난 괜찮아</p>
-                    <p>잿빛 사이 푸른 이 비가</p>
-                    <p>선명하게 모든 계절을</p>
-                    <p>다시 찾아갈 테니</p>
-                    <p>흐렸던 날들만 바람에 날아가거라</p>
-                    <p>베어 물은 듯 추억만 고이 남은 채</p>
-                    <p>푸른 바람과 스쳐간 계절마저 잊어가는</p>
-                    <p>시간은 어제도 잊어버린 채</p>
-                    <p>내게만 맑아라 슬피 우는 사랑아</p>
-                    <p>지난날처럼 길고 멀었던</p>
-                    <p>그리운 계절 아래로</p>
-                    <p>피어가 꽃잎과 푸른 하늘이</p>
-                    <p>베어 물은 듯 후회만 남아 버린 채</p>
-                    <p>기쁜 마음도 슬픔도 이젠 되돌릴 수 없는</p>
-                    <p>날들로 저 멀리 사라져만 가</p>
-                    <p>내 생에 피었던 아름다운 하루가</p>
-                    <p>지난밤처럼 길고 어둡던</p>
-                    <p>그리운 계절을 불러</p>
                 </div>
             </div>
         </div>
@@ -100,8 +44,10 @@
         </div>
         <div class="menu">
             <a href="#" class="repeat">
-                <img src="./image/repeat.svg" alt="repeat">
-                <span>전곡반복</span>
+                <!-- <img src="./image/repeat.svg" alt="repeat">
+                <span>전곡반복</span> -->
+                <img src="./image/close.svg" alt="repeat">
+                <span>반복없음</span>
             </a>
         </div>
         <div class="menu">
