@@ -42,15 +42,18 @@ window.addEventListener('DOMContentLoaded', function(){
 
     //window size check
     checkWindowSize();
+    //favicon
+    isDarkMode.addEventListener('change', changeFavicon);
+    changeFavicon();
 });
 //change favicon
 let changeFavicon = function(){
     if(isDarkMode.matches)
-        favicon.href = "./favicon.png";
+        favicon.href = "./favicon.svg";
     else 
-        favicon.href = "./favicon-light.png";
+        favicon.href = "./favicon-light.svg";
 }
-isDarkMode.addEventListener('change', changeFavicon);
+
 
 //scroll event
 let delay;
