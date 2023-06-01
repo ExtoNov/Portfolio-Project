@@ -1,3 +1,5 @@
+const favicon = document.querySelector("#favicon");
+const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
 let scrollHeight;
 let sclTopbtn = document.querySelector('.scroll-top');
 let sectionArray;
@@ -41,6 +43,15 @@ window.addEventListener('DOMContentLoaded', function(){
     //window size check
     checkWindowSize();
 });
+//change favicon
+let changeFavicon = function(){
+    if(isDarkMode.matches)
+        favicon.href = "./favicon.png";
+    else 
+        favicon.href = "./favicon-light.png";
+}
+isDarkMode.addEventListener('change', changeFavicon);
+
 //scroll event
 let delay;
 window.addEventListener('scroll', function(e){
