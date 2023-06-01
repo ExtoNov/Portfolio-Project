@@ -153,7 +153,8 @@ let repeatBtn = document.querySelector('.repeat');
 let repeatStatus = 2; // 0:repeat all 1: single song repeat 2: no repeat
 let shuffleBtn = document.querySelector('.shuffle');
 let shuffleStatus = 0; // 0: no shuffle 1: shuffle
-let shuffleHistory = [];
+let shuffleNextHistory = [];
+let shufflePreviousHistory = [];
 let background = document.querySelector('.bg');
 let albumArt = document.querySelector('.player .album-art');
 let songName = document.querySelector('.player .song-name');
@@ -174,7 +175,6 @@ let convertTimeToText = function(time){
 let getCurrentTime = function(audio){
     //set track length
     let value = audio.currentTime;
-    console.log(value)
     progressBar.max = audio.duration;
     if(!isSeeking)
         progressBar.value = value;
@@ -191,13 +191,25 @@ let setAudioLength = function(audio){
 //previous song
 let getPrevAudio = function(){
     currentAudio.pause();
-    let shuffleIndex;
     if(shuffleStatus == 0)
         currentIndex--;
     else if(shuffleStatus == 1){
-        currentIndex = shuffleHistory.pop();
+        if(shuffleNextHistory.length > 1){
+            //remove this song
+            shuffleNextHistory.pop();
+            //previous song;
+            currentIndex = shuffleNextHistory.pop();
+        } else {
+            while (true) {
+                let shuffleIndex = Math.floor((Math.random() * audioInfo.length));
+                if(shuffleIndex != currentIndex){
+                    shufflePreviousHistory.push(shuffleIndex);
+                    currentIndex = shuffleIndex;
+                    break;
+                }
+            }
+        }
     }
-    
         
     if(currentIndex < 0)
         currentIndex = audioInfo.length - 1;
@@ -211,12 +223,19 @@ let getNextAudio = function(){
     if(shuffleStatus == 0)
         currentIndex++;
     else if(shuffleStatus == 1){
-        while (true) {
-            shuffleIndex = Math.floor((Math.random() * audioInfo.length));
-            if(shuffleIndex != currentIndex){
-                shuffleHistory.push(shuffleIndex);
-                currentIndex = shuffleIndex;
-                break;
+        if(shufflePreviousHistory.length > 1){
+            //remove this song
+            shufflePreviousHistory.pop();
+            //previous song;
+            currentIndex = shufflePreviousHistory.pop();
+        } else {
+            while (true) {
+                shuffleIndex = Math.floor((Math.random() * audioInfo.length));
+                if(shuffleIndex != currentIndex){
+                    shuffleNextHistory.push(shuffleIndex);
+                    currentIndex = shuffleIndex;
+                    break;
+                }
             }
         }
     }
@@ -239,6 +258,7 @@ let getAudioInfo = function(isInitialize){
         currentAudio.onended = function(){
             repeatAudio(currentAudio);
         }
+        currentAudio.volume = volumeValue / 100;
     }
     if(!isInitialize)
         isPlaying(currentAudio);
@@ -361,7 +381,6 @@ window.addEventListener('keyup', function(e){
         showVolumeController();
     } else if(e.code == 'ArrowDown') {
         volumeValue = volumeValue - 5;
-        e.code
         if(volumeValue < 0)
             volumeValue = 0;
         refreshVolumeIcon();
