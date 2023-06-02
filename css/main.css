@@ -370,7 +370,10 @@ strong {font-weight: 700;}
 .btn-wrap > * {
     width: 100%;
 }
-#web-design .btn-wrap {
+#web-design > .wrap > .content > div > div > .btn-wrap {
+    gap: 30px;
+}
+#web-design > .wrap > .content > div:nth-child(2) > div > .btn-wrap {
     gap: 15px;
 }
 #web-design .btn-wrap > *{
