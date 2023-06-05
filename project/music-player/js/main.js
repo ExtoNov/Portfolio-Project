@@ -469,8 +469,7 @@ let getCurrentLyric = function(audio){
         }
         if(currentLyric.dataset.end < audio.currentTime) {
             currentLyric.classList.add('before');
-            // currentLyric.classList.remove('now');
-            // isLatest = i;
+            currentLyric.classList.remove('after');
             lyricIndex = i;
         }   
         if(currentLyric.dataset.start > audio.currentTime) {
@@ -532,9 +531,18 @@ shuffleBtn.addEventListener('click', function(e){
     }
 });
 
-
-
-
+//top menu toggle
+document.querySelector(".more label").addEventListener('click', function(e){
+    let checkbox = document.querySelector("#auto-hide");
+    let isChecked = checkbox.checked;
+    let headMenu = document.querySelector(".head-menu");
+    //now checked
+    if(!isChecked) {
+        headMenu.classList.remove("hover");
+    } else {
+        headMenu.classList.add("hover");
+    }
+})
 
 //initialize
 getAudioInfo(true);

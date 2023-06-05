@@ -234,9 +234,62 @@ a {
     box-sizing: border-box;
     color: #fff;
 }
-.head-menu:hover {
+.head-menu:hover,
+.head-menu.hover {
     top: 0;
 }
+.more {
+    position: relative;
+}
+.more:hover > div {
+    display: block;
+    animation: fadeIn 0.3s forwards;
+}
+.more > div {
+    display: none;
+    width: max-content;
+    padding: 15px 10px;
+    position: absolute;
+    top: 100%;
+    background: linear-gradient(180deg, rgba(200, 200, 200, 0) 0%, rgba(30, 30, 30, 0.35) 100%);
+    border-radius: 0px 0px 5px 5px;
+    border: 1px solid #fff;
+    border-top: none;
+    opacity: 0;
+}
+.more > div > input[type="checkbox"] {
+    display: none;
+}
+.more > div > input[type="checkbox"]+label {
+    display: inline-block;
+    content: '';
+    width: 32px;
+    height: 16px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    position: relative;
+    transition: 0.3s all;
+    overflow: hidden;
+}
+.more > div > input[type="checkbox"]+label::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #fff;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    transition: 0.3s all;
+}
+.more > div > input[type="checkbox"]:checked+label {
+    background-color: #ff9421;
+}
+.more > div > input[type="checkbox"]:checked+label::after {
+    left: 18px;
+}
+
 .head-menu .menu a,
 .volume .mute{
     display: flex;
