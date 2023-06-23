@@ -280,7 +280,7 @@ strong {font-weight: 700;}
 .marquee {
     width: 100%;
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
     height: 100px;
     user-select: none;
 }
