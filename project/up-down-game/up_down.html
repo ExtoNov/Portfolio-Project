@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>up and down GAME</title>
+    <style>
+        @font-face {
+            font-family: 'LINESeedKR';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'LINESeedKR';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Rg.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #210062;
+            font-family: 'LINESeedKR', sans-serif;
+            background-image: url('./image/5580072_2881379.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+            padding: 10px;
+            display: inline-block;
+        }
+        .wrap {
+            width: 600px;
+            margin: 0 auto;
+            border: 3px solid #77037B;
+            color: #F9E2AF;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 3px #77037B, 0px 0px 10px 3px #77037B inset ;
+            animation: zoomIn 3s 1s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+        }
+        .wrap input {
+            border: none;
+            background-color: transparent;
+            border-bottom: 1px solid #F9E2AF;
+            color: #F9E2AF;
+            font-family: inherit;
+            font-size: 22px;
+            outline: none;
+            margin-right: 20px;
+            text-align: center;
+        }
+        .wrap input:focus::placeholder{
+            color: transparent;
+        }
+        .wrap button {
+            border-radius: 5px;
+            padding: 10px;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            text-align: center;
+            background-color: transparent;
+            cursor: pointer;
+            outline: none;
+            margin-right: 5px;
+        }
+        .wrap button:not(#help):hover,
+        .wrap button:not(#help):focus {
+            transform: scale(1.25);
+        }
+        #check {
+            border: 1px solid #F9E2AF;
+        }
+        #check:hover, #check:focus {
+            background-color: #F9E2AF;
+        }
+        #check:hover path, #check:focus path {
+            fill: #210062;
+        }
+        #reset {
+            border: 1px solid red;
+            color: red;
+        }
+        #reset:hover, #reset:focus {
+            background-color: red;
+        }
+        #reset:hover path, #reset:focus path {
+            fill: #fff;
+        }
+        .wrap p {
+            font-weight: bold;
+            font-size: 20px;
+            margin: 0;
+            line-height: 3;
+        }
+        .wrap p span {
+            font-weight: normal;
+        }
+        .wrap > div {
+            border-top: 3px solid #77037B;
+            border-bottom: 3px solid #77037B;
+        }
+        #help {
+            /* position: relative; */
+            color: #fff;
+        }
+        /* #help div{
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translate(-50%, -120%);
+            width: max-content;
+            height: min-content;
+            align-items: center;
+            justify-content: center;
+            background-color: #F9E2AF;
+            color: #210062;
+            border-radius: 5px;
+            padding: 15px;
+        }
+        #help:hover div, #help:focus div{
+            display: flex;
+            animation: fadeIn 0.3s;
+        } */
+        /* @keyframes fadeIn {
+            0% {
+                opacity: 0%;
+            }
+            100% {
+                opacity: 100%;
+            }
+        } */
+        #result {
+            letter-spacing: -0.05em;
+            margin: 20px 0px;
+        }
+        .bingo {
+            color: #fff;
+            text-shadow: 0px 0px 10px #77037B;
+        }
+        svg {
+            width: 16px;
+            height: auto;
+        }
+        .top {
+            top: 0;
+            left: 0;
+            border-bottom: 2px solid #77037B;
+        }
+        .bottom {
+            bottom: 0;
+            left: 0;
+            border-top: 2px solid #77037B;
+        }
+        .top, .bottom {
+            position: absolute;
+            font-size: 80px;
+            font-weight: bold;
+            overflow: hidden;
+            animation: opening 1s 1.5s forwards;
+            background-color: #210062;
+            color: #77037B;
+            width: 100%;
+            height: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            z-index: 99;
+        }
+        @keyframes zoomIn {
+            from{
+                transform: scale3d(0, 0, 0);
+                opacity: 0;
+            }
+            to {
+                transform: scale3d(1, 1, 1);
+                opacity: 1;
+            }
+        }
+        @keyframes opening {
+            from {
+                height: 50%;
+                opacity: 1;
+            }
+            to{
+                height: 0%;
+                opacity: 0;
+            }
+        }
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .modal-bg {
+            z-index: 100;
+            background-color: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            transition: 0.3s;
+        }
+        .modal {
+            background-color: #333;
+            border-radius: 10px;
+            min-width: 600px;
+            width: fit-content;
+            min-height: 100px;
+            height: fit-content;
+            max-width: 95vw;
+            max-height: 95vh;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            animation: openModal 0.3s;
+        }
+        .modal > h1 {
+            margin: 0;
+            color: #fff;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .modal > div {
+            color: #fff;
+            padding: 20px;
+        }
+        @keyframes openModal {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop>
+        <source src="./video/Synthwave Grid Background Video, Blue Neon Retro Sci-Fi Loop Motion Background _ Free Stock Footage.mp4" type="video/mp4">
+    </video>
+    <div class="wrap">
+        <input type="text" id="num-input" placeholder="Put number here!" inputmode="numeric">
+        <button id="check"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 510 510" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="m150.45 206.55-35.7 35.7L229.5 357l255-255-35.7-35.7-219.3 219.3-79.05-79.05zM459 255c0 112.2-91.8 204-204 204S51 367.2 51 255 142.8 51 255 51c20.4 0 38.25 2.55 56.1 7.65l40.801-40.8C321.3 7.65 288.15 0 255 0 114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255h-51z" fill="#F9E2AF" data-original="#000000"></path></g></svg></button>
+        <button id="reset"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 470.083 470.083" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M434.961 270.163c0 110.241-89.684 199.92-199.923 199.92-110.235 0-199.917-89.679-199.917-199.92 0-36.44 9.915-72.129 28.658-103.178l52.163 31.487c-13.013 21.56-19.89 46.353-19.896 71.697 0 76.64 62.35 138.985 138.985 138.985 76.642 0 138.989-62.346 138.989-138.985 0-73.864-57.961-134.275-130.759-138.566h-29.808l25.1 63.541a5.08 5.08 0 0 1-1.669 5.932 5.083 5.083 0 0 1-6.168-.026L105.91 105.085a5.09 5.09 0 0 1 0-8.074L230.724 1.052a5.11 5.11 0 0 1 6.168-.03 5.087 5.087 0 0 1 1.669 5.938l-25.1 63.534 21.586-.254c7.72 0 33.325 2.598 37.545 3.591 92.339 17.629 162.369 98.935 162.369 196.332z" fill="red" data-original="#000000"></path></g></svg></button>
+        <a href="#" onclick="return false;" id="help">
+            ?
+            <!-- <div>
+                The answer is between 1 to 100.<br>
+                Press "Enter" to check the answer.<br>
+                Press "Space" to reset the game.
+            </div> -->
+        </a>
+        <h1 id="result">PUT NUMBER TO GUESS!</h1>
+        <div>
+            <p>TRY : <span id="try">0</span></p>
+        </div>
+    </div>
+    <div class="top">THE GAME IS</div>
+    <div class="bottom">L O A D I N G</div>
+    <!-- <div class="modal-bg">
+        <div class="modal">
+            <h1>How to play this game <a href="#" onclick="return false;" class="close"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 492 492" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M300.188 246 484.14 62.04c5.06-5.064 7.852-11.82 7.86-19.024 0-7.208-2.792-13.972-7.86-19.028L468.02 7.872C462.952 2.796 456.196.016 448.984.016c-7.2 0-13.956 2.78-19.024 7.856L246.008 191.82 62.048 7.872C56.988 2.796 50.228.016 43.02.016c-7.2 0-13.96 2.78-19.02 7.856L7.872 23.988c-10.496 10.496-10.496 27.568 0 38.052L191.828 246 7.872 429.952C2.808 435.024.02 441.78.02 448.984c0 7.204 2.788 13.96 7.852 19.028l16.124 16.116c5.06 5.072 11.824 7.856 19.02 7.856 7.208 0 13.968-2.784 19.028-7.856l183.96-183.952 183.952 183.952c5.068 5.072 11.824 7.856 19.024 7.856h.008c7.204 0 13.96-2.784 19.028-7.856l16.12-16.116c5.06-5.064 7.852-11.824 7.852-19.028 0-7.204-2.792-13.96-7.852-19.028L300.188 246z" fill="#fff" data-original="#000000" class=""></path></g></svg></a></h1>
+            <div>
+                The answer is between 1 to 100.<br>
+                Press "Enter" to check the answer.<br>
+                Press "Space" to reset the game.
+            </div>
+        </div>
+    </div> -->
+<script>
+    //확인을 누르면 input에 숫자가 있는지 확인
+    //컴퓨터가  숫자를 정함
+    //사용자가 숫자를 제시
+    //컴퓨터 숫자가 더 높으면 'UP', 상황에 따라 'DOWN'이나 'BINGO'를 표시
+    //컴퓨터의 숫자는 100사이
+    let num = generateNumber();
+    let result = document.querySelector("#result");
+    let tryP = document.querySelector("#try");
+    let input = document.querySelector("#num-input");
+    let help = document.querySelector("#help");
+    let count = 0;
+
+
+    document.querySelector("#check").addEventListener("click", check);
+    document.querySelector("#reset").addEventListener("click", reset);
+    function generateNumber() {
+        let result = Math.floor(Math.random()*100) + 1;
+        console.log(result);
+        return result;
+    }
+    function check() {
+        document.querySelector("#check").blur();
+        let inputNum = input.value;
+        if(inputNum == 0 || Number.isNaN(inputNum))
+            return;
+        if(inputNum > 100){
+            alert("The number must be less than 100!");
+            input.value = "";
+            return;
+        }
+        count++;
+        if(inputNum > num)
+            result.innerText = "DOWN";
+        else if(inputNum < num)
+            result.innerText = "UP";
+        else{
+            result.innerText = "BINGO!";
+            result.classList.add("bingo");
+            input.disabled = true;
+        }
+            tryP.innerText = count;
+            input.value="";
+    }
+    function reset(){
+        document.querySelector("#reset").blur();
+        count = 0;
+        input.value = ""
+        tryP.innerText = "0";
+        result.innerText = "PUT NUMBER TO GUESS!";
+        result.classList.remove("bingo");
+        input.disabled = false;
+        num = generateNumber();
+    }
+    input.addEventListener("input", function(event){
+        if(this.value)
+            this.value = this.value.replace(/[^0-9]/g, '');
+    });
+
+    input.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            check();
+        }
+        if(event.key == " " ||
+            event.code == "Space" ||      
+            event.keyCode == 32) {
+            event.preventDefault();
+            reset();
+        }
+    });
+    help.addEventListener("click", ()=>{
+        let modal = document.createElement("div");
+        modal.classList.add("modal-bg");
+        console.log(modal)
+        modal.innerHTML = `<div class="modal">
+            <h1>How to play this game <a href="#" onclick="return false;" class="close"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 492 492" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M300.188 246 484.14 62.04c5.06-5.064 7.852-11.82 7.86-19.024 0-7.208-2.792-13.972-7.86-19.028L468.02 7.872C462.952 2.796 456.196.016 448.984.016c-7.2 0-13.956 2.78-19.024 7.856L246.008 191.82 62.048 7.872C56.988 2.796 50.228.016 43.02.016c-7.2 0-13.96 2.78-19.02 7.856L7.872 23.988c-10.496 10.496-10.496 27.568 0 38.052L191.828 246 7.872 429.952C2.808 435.024.02 441.78.02 448.984c0 7.204 2.788 13.96 7.852 19.028l16.124 16.116c5.06 5.072 11.824 7.856 19.02 7.856 7.208 0 13.968-2.784 19.028-7.856l183.96-183.952 183.952 183.952c5.068 5.072 11.824 7.856 19.024 7.856h.008c7.204 0 13.96-2.784 19.028-7.856l16.12-16.116c5.06-5.064 7.852-11.824 7.852-19.028 0-7.204-2.792-13.96-7.852-19.028L300.188 246z" fill="#fff" data-original="#000000" class=""></path></g></svg></a></h1>
+            <div>
+                The answer is between 1 to 100.<br>
+                Press "Enter" to check the answer.<br>
+                Press "Space" to reset the game.
+            </div>
+        </div>`;
+        let closeBtn = modal.querySelector(".close");
+        closeBtn.onclick = ()=>{
+            modal.remove();
+        };
+        document.body.append(modal);
+    })
+</script>
+</body>
+</html>
