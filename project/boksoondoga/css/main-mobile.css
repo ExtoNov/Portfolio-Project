@@ -1,0 +1,69 @@
+@media screen and (max-width: 767px) {
+    #main-visual {
+        padding: 15lvh 5%;
+        background-position: right 0;
+    }
+    #main-visual > .title > span::before {
+        display: none;
+    }
+    #main-visual .title p {
+        flex-wrap: wrap;
+    }
+    section .title,
+    section .content {
+        word-break: keep-all;
+    }
+    #main-visual .title p span {
+        width: 100%;
+    }
+    #main-visual .title .btn {
+        margin-top: 24px;
+    }
+    #main-visual::before {
+        top: 5lvh;
+    }
+    header .btn {
+        font-size: 14px;
+    }
+    #introduce > .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #introduce > .container > div,
+    #experience > .container > div {
+        position: relative;
+        z-index: 2;
+    }
+    #introduce > .container > img {
+        position: absolute;
+        bottom: 15lvh;
+        right: 0;
+        width: 250px;
+        opacity: 0.4;
+    }
+    #introduce .btn,
+    #product .btn,
+    #experience .btn {
+        height: 48px;
+        font-size: 1rem;
+        padding: 0 24px;
+    }
+    #experience .btn {
+        margin-top: 2em;
+    }
+    #experience > .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #experience > .container > img {
+        display: none;
+    }
+    footer > .container > div {
+        flex-direction: column;
+        row-gap: 2em;
+        align-items: flex-start;
+    }
+    footer > .container > p {
+        margin-top: 1em;
+    }
+}

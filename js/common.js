@@ -253,7 +253,11 @@ let selpixWireframe = function(){
     <p class="content-lg">Mobile</p>
     <img src="./images/selpix/selpix-wireframe-mobile.png">
     </div>
-    </div>`)
+    </div>`);
+};
+let boksoondogaPrototype = function(){
+    makeModal("복순도가 Prototype",
+    `<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FCOkC7DDMYbUYkTwOFR0wI1%2F%25EB%25B3%25B5%25EC%2588%259C%25EB%258F%2584%25EA%25B0%2580%3Ftype%3Ddesign%26node-id%3D0%253A1%26mode%3Ddesign%26t%3D6gmdlXWF3yxHKxRb-1" allowfullscreen></iframe>`);
 };
 let graphicDesignImages = document.querySelectorAll('.swiper .swiper-slide');
 graphicDesignImages.forEach(function(element) {
