@@ -267,6 +267,11 @@ let musicPlayerPrototype = function(){
     makeModal("Music Player Prototype",
     `<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FZfaQuJu8QiJTUoIcC9TGQS%2Fmusic-player%3Ftype%3Ddesign%26node-id%3D0%253A1%26mode%3Ddesign%26t%3Dbh6hskK5R4pN8RPV-1" allowfullscreen></iframe>`);
 };
+let mechanikPrototype = function(){
+    makeModal("Mechanik Prototype",
+    `<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FW1stFcGEOD4vOoHkbdFUKI%2Fmechanik%3Ftype%3Ddesign%26node-id%3D0%253A1%26mode%3Ddesign%26t%3D1u3o2wRfIEYI5S95-1" allowfullscreen></iframe>`);
+}
+
 let graphicDesignImages = document.querySelectorAll('.swiper .swiper-slide');
 graphicDesignImages.forEach(function(element) {
     let image = element.querySelector("img");
