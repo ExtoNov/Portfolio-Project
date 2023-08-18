@@ -276,7 +276,11 @@ let graphicDesignImages = document.querySelectorAll('.swiper .swiper-slide');
 graphicDesignImages.forEach(function(element) {
     let image = element.querySelector("img");
     image.addEventListener("click", function(e){
-        makeModal("이미지 상세보기", `<div style="text-align: center;"><img src="${image.src}" style="max-height:72vh;"></div>`);
+        makeModal("이미지 상세보기", `<div style="text-align: center;">
+        <a href="${image.src}" target="_blank"/>
+            <img src="${image.src}" style="max-height:72vh;">
+        </a>
+        </div>`);
     })
 });
 let clockModal = function(){
