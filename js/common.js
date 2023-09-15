@@ -41,7 +41,14 @@ window.addEventListener('DOMContentLoaded', function(){
     }
 
     //window size check
-    checkWindowSize();
+    // checkWindowSize();
+
+    //mobile, tablet check to scroll top
+    let isDesktop = window.matchMedia('(min-width: 1439px)').matches;
+    if(!isDesktop){
+        sclTopbtn.remove();
+    }
+
     //favicon
     isDarkMode.addEventListener('change', changeFavicon);
     changeFavicon();
@@ -165,20 +172,20 @@ const headingObserver = new IntersectionObserver((e) => {
 }, {rootMargin: '30px 0px -150px 0px'});
 
 //mobile user agent check 
-let checkUserAgent = function(){
-    if (navigator.userAgent.match(/Android/i) ||
-        navigator.userAgent.match(/iPhone/i)) {
-        alert(`본 포트폴리오 페이지는 데스크탑 환경(1440px 이상)에 최적화 되어있습니다.
-권장 해상도 : 1920x1080`);
-    }
-}
+// let checkUserAgent = function(){
+//     if (navigator.userAgent.match(/Android/i) ||
+//         navigator.userAgent.match(/iPhone/i)) {
+//         alert(`본 포트폴리오 페이지는 데스크탑 환경(1440px 이상)에 최적화 되어있습니다.
+// 권장 해상도 : 1920x1080`);
+//     }
+// }
 //check window size 
-let checkWindowSize = function(){
-    let isDesktop = window.matchMedia('(min-width: 1439px)').matches;
-    if(!isDesktop)
-        alert(`본 포트폴리오 페이지는 데스크탑 환경(1440px 이상)에 최적화 되어있습니다.
-권장 해상도 : 1920x1080`)
-}
+// let checkWindowSize = function(){
+//     let isDesktop = window.matchMedia('(min-width: 1439px)').matches;
+//     if(!isDesktop)
+//         alert(`본 포트폴리오 페이지는 데스크탑 환경(1440px 이상)에 최적화 되어있습니다.
+// 권장 해상도 : 1920x1080`)
+// }
 
 //mouse effect
 // window.onmousemove = function(e){
@@ -219,7 +226,7 @@ let bugsStyleGuide = function(){
 }
 let bugsWireframe = function(){
     makeModal("Bugs Redesign Wireframe",
-    `<div style="display: flex; width: calc(85vw - 100px);gap: 20px;">
+    `<div style="display: flex; gap: 20px;">
     <div>
     <p class="content-lg">Desktop</p>
     <img src="./images/bugs-redesign/bugs-redesign-wireframe-desktop.jpg">
@@ -244,7 +251,7 @@ let selpixStyleGuide = function(){
 }
 let selpixWireframe = function(){
     makeModal("Selpix Wireframe",
-    `<div style="display: flex; width: calc(85vw - 100px);gap: 20px;">
+    `<div style="display: flex; gap: 20px;">
     <div>
     <p class="content-lg">Desktop</p>
     <img src="./images/selpix/selpix-wireframe-desktop.png">
