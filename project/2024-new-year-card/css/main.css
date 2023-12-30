@@ -1,0 +1,199 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+@import url('./reset.css');
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Pretendard Variable', sans-serif;
+    height: 100dvh;
+    display: grid;
+    place-items: center;
+    background-image: url('../image/jorge-vasconez-c4cWawGBFv8-unsplash.jpg');
+    background-position: center 40%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+::selection {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+#card {
+    visibility: hidden;
+    position: relative;
+    width: 90%;
+    max-width: 1280px;
+    min-height: 720px;
+    border-radius: 24px;
+    box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.7);
+    /* background-image: url('../image/bg.avif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+    overflow: hidden;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    background-color: rgba(255,255,255,0.33);
+    backdrop-filter: blur(8px);
+
+}
+#card * {
+    position: relative;
+    z-index: 2;
+}
+/* #card::after {
+    position: absolute;
+    content: '';
+    background: linear-gradient(0deg, rgba(255,109,14,1) 0%, rgba(0,101,255,0.7) 50%);
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+} */
+#card h1 {
+    position: absolute;
+    display: block;
+    letter-spacing: -0.1em;
+    font-weight: 50;
+    font-size: 160px;
+    right: 0;
+    top: 0;
+}
+#card h1 span {
+    display: block;
+    background-image: linear-gradient(to bottom, #2c2c2c, #684c5d, #b56c6d, #e79f61, #e2e767);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 0.5em;
+}
+#card h1 span:nth-child(1) {
+    position: absolute;
+    top: 20px;
+    right: 100px;
+}
+#card h1 span:nth-child(2) {
+    position: absolute;
+    top: 60px;
+    right: 30px;
+}
+#card h1 span:nth-child(3) {
+    position: absolute;
+    top: 150px;
+    right: 140px;
+}
+#card h1 span:nth-child(4) {
+    position: absolute;
+    top: 200px;
+    right: 80px;
+}
+#card p {
+    white-space: pre-line;
+    color: #333;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.25;
+    word-break: keep-all;
+}
+#card p strong {
+    font-weight: 700;
+}
+#dragon {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    width: 300px;
+    height: 300px;
+    scale: 2;
+}
+
+.modal {
+    position: absolute;
+    width: 90%;
+    max-width: 480px;
+    padding: 32px;
+    border-radius: 24px;
+    background-color: rgba(255,255,255,0.33);
+    backdrop-filter: blur(8px);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.7);
+    animation: opening 0.3s forwards;
+    text-align: center;
+    display: grid;
+    row-gap: 16px;
+    line-height: 1.25;
+    word-break: keep-all;
+}
+.modal strong {
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+}
+.modal a {
+    display: grid;
+    place-items: center;
+    padding: 16px;
+    border-radius: 4px;
+    background-color: #684c5d;
+    width: max-content;
+    margin: 0 auto;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s all;
+    border: 2px solid transparent;
+}
+.modal a:active,
+.modal a:focus,
+.modal a:hover {
+    background-color: transparent;
+    border-color: #684c5d;
+    color: #684c5d;
+}
+.modal input,
+.modal textarea {
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #333;
+    background: transparent;
+    padding: 8px;
+    border-radius: 4px;
+    font-family: 'Pretendard Variable', sans-serif;
+    transition: 0.3s all;
+    resize: none;
+}
+.modal input:focus,
+.modal textarea:focus {
+    border-color: #fff;
+}
+
+@keyframes opening {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+@media screen and (max-width: 1280px) {
+    #card {
+        grid-template-columns: 1fr;
+    }
+    #card p {
+        font-size: 16px;
+    }
+    #dragon {
+        position: relative;
+        scale: 1.5;
+        width: 160px;
+        height: 160px;
+    }
+    #card h1 {
+        top: auto;
+        bottom: 280px;
+        scale: 0.75;
+    }
+}
